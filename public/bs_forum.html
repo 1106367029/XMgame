@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+
+	<title>XM游戏资讯平台-后台-论坛管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="css/backstage/font-awesome.min.css">
+	<link rel="stylesheet" href="css/backstage/style.css">
+
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+
+<header id="header" class="navbar">
+	<ul class="nav navbar-nav navbar-avatar pull-right">
+		<li class="">
+			<a>
+				<span class="hidden-sm-only">欢迎你：</span>
+				<span class="hidden-sm-only" id="cid"></span>
+				<span class="thumb-small avatar inline"><img src="img/backstage/avatar.jpg" class="img-circle"></span>
+			</a>
+		</li>
+	</ul>
+	<a class="navbar-brand" href="">后台</a>
+	<button type="button" class="btn btn-link pull-left nav-toggle hidden-lg"
+	        data-toggle="class:slide-nav slide-nav-left" data-target="body">
+		<i class="icon-reorder icon-xlarge text-default"></i>
+	</button>
+	<ul class="nav navbar-nav hidden-sm">
+		<li >
+			<img src="img/backstage/logo.png" width="300px" height="40px">
+		</li>
+	</ul>
+
+</header>
+<nav id="nav" class="nav-primary visible-lg nav-vertical">
+	<ul class="nav" data-spy="affix" data-offset-top="50">
+		<li class="active"><a href="bs_forum.html"><i class="icon-comment icon-xlarge"></i>论坛管理</a></li>
+		<li><a href="bs_strategy.html"><i class="icon-th icon-xlarge"></i>攻略管理</a></li>
+		<li><a href="bs_users.html"><i class="icon-user icon-xlarge"></i>用户管理</a></li>
+		<li><a href="bs_news.html"><i class="icon-edit icon-xlarge"></i>新闻管理</a></li>
+		<li><a href="bs_game.html"><i class="icon-trophy icon-xlarge"></i>游戏管理</a></li>
+		<li onclick="outlogin()"><a href="javascript:"><i class="icon-off icon-xlarge"></i>退出登录</a></li>
+	</ul>
+</nav>
+
+<section id="content">
+	<section class="main padder">
+		<div class="clearfix">
+			<h4><i class="icon-table"></i>帖子管理</h4>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<section class="panel">
+					<header class="panel-heading">
+						管理帖子
+					</header>
+					<div class="row text-small">
+						<div class="col-lg-2">
+							<select id="searchtype" class="form-control">
+								<option value="0">选择搜索方式</option>
+								<option value="1">关键词</option>
+								<option value="2">帖子id</option>
+								<option value="3">用户id</option>
+							</select>
+						</div>
+						<div class="col-lg-3">
+							<div class="input-group">
+								<input type="text" class="input-small form-control" v-model="searchword" placeholder="输入id或关键词进行搜索" >
+								<span class="input-group-btn"><button class="btn btn-small btn-white" type="button" @click="search">搜索</button></span>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<button class="btn btn-small btn-success" @click="showalldyn">显示所有帖子</button>
+						</div>
+					</div>
+					<div class="pull-out m-t-small">
+						<table class="table table-striped b-t text-small">
+							<thead>
+							<tr>
+								<th>帖子id</th>
+								<th>发帖用户id</th>
+								<th>内容</th>
+								<th>图片</th>
+								<th>评论人数</th>
+								<th>点赞人数</th>
+								<th>帖子类型</th>
+								<th>发帖时间</th>
+								<th>删除</th>
+							</tr>
+							</thead>
+							<tbody id="tbody">
+							<tr v-for="dynlist of dynamicslist">
+								<td>{{dynlist.dynamics_id}}</td>
+								<td>{{dynlist.uid}}</td>
+								<td>{{dynlist.content_text}}</td>
+								<td>{{dynlist.picture}}</td>
+								<td>{{dynlist.comment_num}}</td>
+								<td>{{dynlist.praise_num}}</td>
+								<td>{{dynlist.type}}</td>
+								<td>{{dynlist.creation_time}}</td>
+								<td><a href="javascript:" class="active" onclick="deletedyn(this)">
+									<i class="icon-remove icon-large text-danger text-active"></i>
+								</a></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<footer class="panel-footer">
+						<div class="row">
+							<div class="col-lg-8"></div>
+							<div class="col-lg-4 text-right text-center-sm">
+								<ul class="pagination pagination-small m-t-none m-b-none" id="tzpage" style="display: none">
+									<li id="tzprev" @click="tzprevpage"><a href="javascript:"><i class="icon-chevron-left"></i></a></li>
+									<li @click="firstpage"><a href="javascript:">首页</a></li>
+									<li class="active"><a href="javascript:">1</a></li>
+									<li><a href="javascript:">/</a></li>
+									<li><a href="javascript:">4</a></li>
+									<li @click="lastpage"><a href="javascript:">尾页</a></li>
+									<li id="tznext" @click="tznextpage"><a href="javascript:"><i class="icon-chevron-right"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</footer>
+				</section>
+			</div>
+		</div>
+	</section>
+	<section class="main padder">
+		<h3>一级评论管理</h3>
+		<div class="row">
+			<div class="col-lg-12">
+				<section class="main padder">
+					<div class="row">
+						<div class="col-lg-12">
+							<section class="panel">
+								<div class="row text-small">
+									<div class="col-lg-3">
+										<div class="input-group">
+											<input type="text" class="input-small form-control" placeholder="输入帖子id进行评论搜索" v-model="dnyid" >
+											<span class="input-group-btn"><button class="btn btn-small btn-white" type="button" @click="searchpl">搜索</button></span>
+										</div>
+									</div>
+								</div>
+								<div class="pull-out m-t-small">
+									<table class="table table-striped b-t text-small">
+										<thead>
+										<tr>
+											<th>id</th>
+											<th>帖子id</th>
+											<th>评论内容</th>
+											<th>评论时间</th>
+											<th>评论者id</th>
+											<th>删除</th>
+										</tr>
+										</thead>
+										<tbody id="body">
+										<tr v-for="pl of pllist">
+											<td>{{pl.comment_id}}</td>
+											<td>{{pl.dynamics_id}}</td>
+											<td>{{pl.content}}</td>
+											<td>{{pl.time}}</td>
+											<td>{{pl.uid}}</td>
+											<td><a href="javascript:" class="active" onclick="deletepl(this)">
+												<i class="icon-remove icon-large text-danger text-active"></i>
+											</a></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<footer class="panel-footer">
+									<div class="row">
+										<div class="col-lg-8"></div>
+										<div class="col-lg-4 text-right text-center-sm">
+											<ul class="pagination pagination-small m-t-none m-b-none" id="plpage" style="display: none">
+												<li id="plprev" @click="plprevpage"><a href="javascript:"><i class="icon-chevron-left"></i></a></li>
+												<li @click="plfirstpage"><a href="javascript:">首页</a></li>
+												<li class="active"><a href="javascript:">1</a></li>
+												<li><a href="javascript:">/</a></li>
+												<li><a href="javascript:">4</a></li>
+												<li @click="pllastpage"><a href="javascript:">尾页</a></li>
+												<li id="plnext" @click="plnextpage"><a href="javascript:"><i class="icon-chevron-right"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</footer>
+							</section>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+	<section class="main padder">
+		<h3>二级评论管理</h3>
+		<div class="row">
+			<div class="col-lg-12">
+				<section class="main padder">
+					<div class="row">
+						<div class="col-lg-12">
+							<section class="panel">
+								<div class="row text-small">
+									<div class="col-lg-3">
+										<div class="input-group">
+											<input type="text" class="input-small form-control" placeholder="输入一级评论id进行评论搜索" v-model="secondid" >
+											<span class="input-group-btn"><button class="btn btn-small btn-white" type="button" @click="secondsearch">搜索</button></span>
+										</div>
+									</div>
+								</div>
+								<div class="pull-out m-t-small">
+									<table class="table table-striped b-t text-small">
+										<thead>
+										<tr>
+											<th>二级id</th>
+											<th>评论内容</th>
+											<th>评论时间</th>
+											<th>评论用户id</th>
+											<th>一级评论id</th>
+											<th>删除</th>
+										</tr>
+										</thead>
+										<tbody id="bod">
+										<tr v-for="pl of secondpl">
+											<td>{{pl.scid}}</td>
+											<td>{{pl.content}}</td>
+											<td>{{pl.time}}</td>
+											<td>{{pl.uid}}</td>
+											<td>{{pl.comment_id}}</td>
+											<td><a href="javascript:" class="active" onclick="delsencondpl(this)">
+												<i class="icon-remove icon-large text-danger text-active"></i>
+											</a></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
+
+
+
+<footer>
+	<div class="text-center padder clearfix">
+		<p>
+			<small>Copyright&copy;2019 软工161莫慧兰</small><br><br>
+		</p>
+	</div>
+</footer>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/backstage/forum_management/forum.js"></script>
+
+</body>
+</html>

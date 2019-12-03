@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+
+	<title>XM游戏资讯平台-后台-新闻管理</title>
+	<meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="css/backstage/font-awesome.min.css">
+	<link rel="stylesheet" href="css/backstage/style.css">
+	<link rel="stylesheet" href="css/upimg.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+
+
+</head>
+<body>
+<header id="header" class="navbar">
+	<ul class="nav navbar-nav navbar-avatar pull-right">
+		<li class="">
+			<a>
+				<span class="hidden-sm-only">欢迎你：</span>
+				<span class="hidden-sm-only" id="cid"></span>
+				<span class="thumb-small avatar inline"><img src="img/backstage/avatar.jpg" class="img-circle"></span>
+			</a>
+		</li>
+	</ul>
+	<a class="navbar-brand" href="">后台</a>
+	<button type="button" class="btn btn-link pull-left nav-toggle hidden-lg"
+	        data-toggle="class:slide-nav slide-nav-left" data-target="body">
+		<i class="icon-reorder icon-xlarge text-default"></i>
+	</button>
+	<ul class="nav navbar-nav hidden-sm">
+		<li>
+			<img src="img/backstage/logo.png" width="300px" height="40px">
+		</li>
+	</ul>
+
+</header>
+<nav id="nav" class="nav-primary visible-lg nav-vertical">
+	<ul class="nav" data-spy="affix" data-offset-top="50">
+		<li><a href="bs_forum.html"><i class="icon-comment icon-xlarge"></i>论坛管理</a></li>
+		<li><a href="bs_strategy.html"><i class="icon-th icon-xlarge"></i>攻略管理</a></li>
+		<li><a href="bs_users.html"><i class="icon-user icon-xlarge"></i>用户管理</a></li>
+		<li class="active"><a href="bs_news.html"><i class="icon-edit icon-xlarge"></i>新闻管理</a></li>
+		<li><a href="bs_game.html"><i class="icon-trophy icon-xlarge"></i>游戏管理</a></li>
+		<li onclick="outlogin()"><a href="javascript:"><i class="icon-off icon-xlarge"></i>退出登录</a></li>
+	</ul>
+</nav>
+
+<section id="content">
+	<section class="main padder">
+		<div class="clearfix">
+			<h4><i class="icon-edit"></i>新闻管理</h4>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<!--新闻上传-->
+				<section class="panel">
+					<h3 style="margin-left: 20px">发布新闻</h3>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-lg-3 control-label">新闻标题</label>
+							<div class="col-lg-8">
+								<input type="text" placeholder="输入新闻标题" v-model="uptitle" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">出自平台</label>
+							<div class="col-lg-8">
+								<input type="text" placeholder="如果不是原创，请写明从哪个平台获取，如原创，不需要写" v-model="upsource" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">新闻链接</label>
+							<div class="col-lg-8">
+								<input type="text" placeholder="如果不是原创，请写明获取的详细链接,如原创，不需要写" v-model="uplink" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">新闻内容</label>
+							<div class="col-lg-8">
+								<textarea placeholder="输入新闻内容" v-model="upcontent" rows="6" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">新闻类型</label>
+							<div class="col-lg-8">
+								<select id="searchtype" class="form-control">
+									<option value="5">选择新闻类型</option>
+									<option value="0">新闻</option>
+									<option value="1">公告</option>
+									<option value="2">活动</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-3 control-label">新闻图片</label>
+							<div class="image-new">
+								<div class="addbox">
+									<input type="file" @change="getImgBase()">
+									<div class="addbtn">添加图片</div>
+								</div>
+								<div class="view">
+									<div class="item" v-for="(item, index) in imgBase64">
+										<span class="cancel-btn" @click="delImg(index)">x</span>
+										<img :src="item">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-9 col-offset-3">
+								<button type="button" class="btn btn-white" @click="clean">取消</button>
+								<button type="button" class="btn btn-primary" @click="insertnew">上传</button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="panel">
+
+				</section>
+			</div>
+			<!--新闻搜索-->
+			<div class="col-lg-12">
+				<div class="panel">
+					<div class="clearfix">
+						<div class="col-lg-12">
+							<h3>搜索新闻</h3>
+						</div>
+						<div class="col-lg-12">
+
+							<div class="row text-small m-b-large">
+								<div class="col-lg-3">
+									<div class="input-group">
+										<input type="text" v-model="newid" class="input-small form-control" placeholder="输入id进行搜索">
+										<span class="input-group-btn"><button class="btn btn-small btn-white" type="button" @click="searchbyid" >搜索</button></span>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="input-group">
+										<input type="text" v-model="keyword" class="input-small form-control" placeholder="输入关键词进行搜索">
+										<span class="input-group-btn"><button class="btn btn-small btn-white" type="button"@click="searchbykey" >搜索</button></span>
+									</div>
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-small btn-success" @click="showall">显示所有新闻</button>
+								</div>
+							</div>
+
+							<table class="table table-striped b-t text-small">
+								<thead>
+								<tr>
+									<th>新闻id</th>
+									<th>标题</th>
+									<th>内容</th>
+									<th>图片</th>
+									<th>发布时间</th>
+									<th>出自平台</th>
+									<th>修改</th>
+									<th>删除</th>
+								</tr>
+								</thead>
+								<tbody id="tbody">
+								</tbody>
+							</table>
+							<footer class="panel-footer">
+								<div class="row">
+									<div class="col-lg-8"></div>
+									<div class="col-lg-4 text-right text-center-sm">
+										<ul class="pagination pagination-small m-t-none m-b-none" id="page" style="display: none">
+											<li id="prev" @click="prevpage"><a href="javascript:"><i class="icon-chevron-left"></i></a></li>
+											<li @click="firstpage"><a href="javascript:">首页</a></li>
+											<li class="active"><a href="javascript:">1</a></li>
+											<li><a href="javascript:">/</a></li>
+											<li><a href="javascript:">4</a></li>
+											<li @click="lastpage"><a href="javascript:">尾页</a></li>
+											<li id="next" @click="nextpage"><a href="javascript:"><i class="icon-chevron-right"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</footer>
+							<section class="panel">
+								<h3 style="margin-left: 20px">新闻详情</h3>
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label class="col-lg-3 control-label">新闻标题</label>
+										<div class="col-lg-8">
+											<input id="detailtitle" type="text" placeholder="新闻标题" class="form-control">
+											<input style="display: none" id="newid">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">新闻内容</label>
+										<div class="col-lg-8">
+											<textarea id="detailcontent" placeholder="新闻内容" rows="5" class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">新闻图片</label>
+										<div class="col-lg-9 media">
+											<div class="image-new">
+												<div class="view" id="img">
+<!--													<div class="item">-->
+<!--														<span class="cancel-btn" @click="delImg(index)">x</span>-->
+<!--														<img src="img/new/new上午9-30-190.jpg">-->
+<!--													</div>-->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-9 col-offset-3">
+											<button type="button" class="btn btn-primary" @click="updatenew">修改</button>
+										</div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+<footer id="footer">
+	<div class="text-center padder clearfix">
+		<p>
+			<small>Copyright&copy;2019 软工161莫慧兰</small><br><br>
+		</p>
+	</div>
+</footer>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/backstage/news_management/news.js"></script>
+
+</body>
+</html>

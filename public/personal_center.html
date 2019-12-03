@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>XM游戏资讯平台-个人中心</title>
+	<link rel='stylesheet' href='css/personal_center/style.css' type='text/css'>
+	<link rel='stylesheet' href='css/personal_center/lmlblog.css' type='text/css'>
+	<link rel='stylesheet' href='css/personal_center/all.css' type='text/css'>
+	<!--导航栏css-->
+	<link rel="stylesheet" href="css/head.css"/>
+	<style>
+		.fr {
+			float: right;
+			margin-right: 60px;
+		}
+		.lmlblog-member-content-list{
+			background-color: rgba(255,255,255,0.9);
+		}
+	</style>
+	<!--图片上传css-->
+	<link rel="stylesheet" href="css/upimg.css">
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src='js/jquery-3.2.1.js'></script>
+
+</head>
+<body>
+<!-- 导航 -->
+<header class="header">
+	<div class="clearfix">
+		<div class="fl left">
+			<a href="javascript:void(0)"><img src="img/forum/logo.png" alt="" class="img1"/></a>
+			<a href="javascript:void(0)"><img src="img/forum/logo.png" alt="" class="img2"/></a>
+		</div>
+		<div class="fr nav">
+			<ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+				<li><a href="index.html">官网首页</a></li>
+				<li><a href="new.html">新闻资讯</a></li>
+				<li><a href="strategy.html">游戏攻略</a></li>
+				<li><a href="forum.html">游戏论坛</a></li>
+				<li><a href="personal_center.html" style="color: orangered;">个人中心</a></li>
+				<li onclick="outlogin()"><a href="javascript:">退出登录</a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0)" id="navToggle">
+			<span></span>
+		</a>
+	</div>
+</header>
+<!--移动端的导航-->
+<div class="m_nav">
+	<div class="top clearfix">
+		<img src="img/forum/closed.png" alt="" class="closed"/>
+	</div>
+	<div class="logo">
+		<img src="img/forum/logo.png" alt=""/>
+	</div>
+	<ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+		<li><a href="index.html">官网首页</a></li>
+		<li><a href="new.html">新闻资讯</a></li>
+		<li><a href="strategy.html">游戏攻略</a></li>
+		<li><a href="forum.htmlnode">游戏论坛</a></li>
+		<li class="active"><a href="personal_center.html" style="color: orangered;">个人中心</a></li>
+		<li onclick="outlogin()"><a href="javascript:">退出登录</a></li>
+	</ul>
+</div>
+
+<div class="lmlblog-member-main">
+	<div class="lmlblog-member-bg">
+		<div class="lmlblog-member-content">
+			<div class="lmlblog-member-header">
+				<div class="lmlblog-member-avatar other">
+					<div class="grzx-sctx">
+						<div class="addbox">
+							<input type="file" accept="image/*" @change="getTximg()">
+							<div class="addbtn avatar" :style="'background-image: url('+imgurl+')'"></div>
+						</div>
+					</div>
+				</div>
+				<h1>&nbsp;</h1>
+				<div class="lmlblog-member-username">
+
+					<h1>{{uname}}</h1>
+					<div class="lmlblog-member-desc">江湖风雨，几度阑珊。沧海一粟，愿君一剑轻安。</div>
+					<div class="lmlblog-member-follow-info">
+					</div>
+				</div>
+
+				<div class="lmlblog-member-content-list clear">
+					<div class="lmlblog-member-left">
+						<div class="lmlblog-member-left-follow clear">
+							<li>
+								<strong v-cloak>{{gznum}}</strong>
+								<span>关注</span>
+							</li>
+							<li>
+								<strong v-cloak>{{fannum}}</strong>
+								<span>粉丝</span>
+							</li>
+						</div>
+						<div class="lmlblog-member-left-profile" id="userinfo">
+							<h3>资料简介</h3>
+							<li><i class="fa fa-address-book-o"></i> I D：<input type="text" v-model="uid"
+							                                                    readonly></span></span></li>
+							<li><i class="fa fa-transgender"></i> 性别：<input type="text" v-model="gender" readonly
+							                                                maxlength="2"></span></span></li>
+							<li><i class="fa fa-clock-o"></i> 年龄：<input type="text" v-model="age"
+							                                            readonly></span></span></li>
+							<li><i class="fa fa-phone"></i> 号码：<input type="text" v-model="phone"
+							                                          readonly></span></span></li>
+							<li><i class="fa fa-envelope"></i> 邮箱：<input type="text" v-model="email"
+							                                             readonly></span></span></li>
+							<li><i class="fa fa-smile-o"></i>签名：<textarea v-model="introduce" style="height: 40px"
+							                                              cols="22" overflow="hidden" maxlength="44"
+							                                              readonly></textarea></li>
+							<li>
+								<button @click="input()">修改资料</button>
+								<button @click="modify">应用修改</button>
+							</li>
+						</div>
+						<div class="lmlblog-member-left-visitor clear">
+							<h3 id="fans">我的粉丝</h3>
+							<li v-for="u of fans"><a href="" @click="pcuser(u.uid)"><img :src="u.picture" class="avatar">
+								<p>{{u.uname}}</p></a></li>
+						</div>
+						<div class="lmlblog-member-left-visitor clear">
+							<h3 id="gz">我的关注</h3>
+							<li v-for="m of myattention"><a href="javascript:" @click="pcuser(m.uid)"><img :src="m.picture" class="avatar">
+								<p>{{m.uname}}</p></a></li>
+						</div>
+						<div class="lmlblog-member-left-visitor clear" id="sx">
+							<h3>我的私信</h3>
+							<div v-for="s of sxlist" style="border-bottom: solid 1px #c3c6c9">
+								<h4>来自<span style="color: red" @click="pcuser(s.uid)">{{s.uname}}</span>的私信:</h4>
+								<h4>{{s.content}}</h4>
+								<button @click="delsx(s.chat_id,$event)" class="btn layui-bg-green" style="width: 50px;margin-left: 200px">删除</button>
+							</div>
+						</div>
+						<div class="lmlblog-member-left-visitor clear" id="chat">
+							<h3>聊天邀请</h3>
+							<div v-for="t of talklist">
+								<h4 style="font-size: 18px;color: red" @click="pcuser(t.uid)">{{t.uname}}<span style="font-size: 15px;color: black">邀请你聊天</span></h4>
+								<button class="btn layui-bg-green" style="width: 50px" @click="agreetalk(t.chat_id,t.from_id,t.to_id,$event)">同意</button>
+								<button class="btn layui-bg-red" style="width: 50px">拒绝</button>
+							</div>
+						</div>
+						<div class="lmlblog-member-left-bg-xg clear">
+							<h3>发布动态</h3>
+							<div>
+								<select id="tztype">
+									<option value="5">选择要发布的动态类型</option>
+									<option value="1">端游</option>
+									<option value="2">手游</option>
+									<option value="3">现实</option>
+									<option value="4">亲子</option>
+									<option value="0">其他</option>
+								</select>
+							</div>
+							<div id="lmlblog-memeber-bg-xg" class="aplayer"></div>
+							<textarea style="height: 160px;width: 100%" cols="22" overflow="hidden"
+							          maxlength="100" v-model="tzcontent">
+							</textarea>
+							<div class="image-view">
+								<div class="addbox">
+									<input type="file" @change="getImgBase()">
+									<div class="addbtn">添加图片</div>
+								</div>
+								<button class="upgl" @click="inserttz">上传攻略</button>
+								<div class="view">
+									<div class="item" v-for="(item, index) in imgBase64">
+										<span class="cancel-btn" @click="delImg(index)">x</span>
+										<img :src="item">
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="lmlblog-member-right">
+						<div class="lmlblog-post-list">
+
+							<!-- 动态 -->
+							<div class="lmlblog-posts-list words" v-for="dynamics of dynamics"
+							     style="background-image:url(img/personal_center/044.png); "
+							     data="4189">
+								<!-- 动态内容部分，包括列表 -->
+								<div class="lmlblog-post-user-info">
+									<div class="lmlblog-post-user-info-avatar">
+										<a href="" style="display: inline-block;">
+											<span class="lmlblog-vip-icon"></span>
+											<img :src="imgurl" class="avatar">
+										</a>
+									</div>
+
+									<div class="lmlblog-post-user-info-name">
+										<a href="">
+											<font style="color:#333;font-weight:600">{{uname}}</font>
+										</a>
+									</div>
+									<div class="lmlblog-post-user-info-time" title="2017-12-12 03:10">
+										{{dynamics.creation_time}}
+									</div>
+
+								</div><!-- 作者信息 -->
+								<div class="lmlblog-post-content ">
+									<p>{{dynamics.content_text}}</p>
+								</div>
+								<div class="lmlblog-post-images-list clear" v-show="dynamics.picture1!='undefined' && dynamics.picture1!=null">
+									<a href="javascript:" v-show="dynamics.picture1!='undefined'" >
+										<img :src="dynamics.picture1"></a>
+									<a href="javascript:" v-show="dynamics.picture2!='undefined'">
+										<img :src="dynamics.picture2"></a>
+									<a href="javascript:" v-show="dynamics.picture3!='undefined'">
+										<img :src="dynamics.picture3"></a>
+								</div>
+								<div class="lmlblog-post-bar">
+									<li @click="detail(dynamics.dynamics_id)">
+										<i class="lmlblog-icon">&#xe658; </i>查看详情 <span></span>
+									</li>
+								</div>
+								<div  style="margin-left: 87%" class="delete" @click="deletedyn(dynamics.dynamics_id)"><p>删除动态</p></div>
+							</div><!-- posts_list -->
+
+
+							<!-- 分页 -->
+							<div class="lmlblog-pager">
+								<a class="lmlblog-pager-left" href="javascript:" @click="prevpage">上一页</a>
+								<div class="lmlblog-pager-center layui-form">
+									第&nbsp;<span id="startpage">1</span>&nbsp;页&nbsp;/&nbsp;共&nbsp;<span id="allpage">2</span>&nbsp;页
+								</div>
+								<a class="lmlblog-pager-right" href="javascript:" @click="nextpage">下一页</a></div>
+						</div>
+					</div>
+				</div>
+				<footer >
+					<div style="color: white;text-align: center">
+						<p><br><br>
+						<p>Copyright&copy;2019 软工161莫慧兰</p><br><br>
+						</p>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 底部 -->
+
+<!-- 返回顶部 -->
+<a href="javascript:returnTop();" class="cd-top"></a>
+<script type="text/javascript">
+    var sdelay = 0;
+
+    function returnTop() {
+        window.scrollBy(0, -1400);//Only for y vertical-axis
+        if (document.body.scrollTop > 0) {
+            sdelay = setTimeout('returnTop()', 50);
+        }
+    }
+</script>
+<script src="js/navbar.js"></script>
+<script src="js/personal_center/main.js"></script>
+</body>
+</html>

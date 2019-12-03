@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+
+	<title>XM游戏资讯平台-后台-攻略管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/bootstrap-3.3.4.css">
+	<link rel="stylesheet" href="css/backstage/font-awesome.min.css">
+	<link rel="stylesheet" href="css/backstage/style.css">
+	<link rel="stylesheet" href="css/upimg.css">
+
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+
+</head>
+<body>
+
+<header id="header" class="navbar">
+	<ul class="nav navbar-nav navbar-avatar pull-right">
+		<li class="">
+			<a>
+				<span class="hidden-sm-only">欢迎你：</span>
+				<span class="hidden-sm-only" id="cid"></span>
+				<span class="thumb-small avatar inline"><img src="img/backstage/avatar.jpg" class="img-circle"></span>
+			</a>
+		</li>
+	</ul>
+	<a class="navbar-brand" href="">后台</a>
+	<button type="button" class="btn btn-link pull-left nav-toggle hidden-lg"
+	        data-toggle="class:slide-nav slide-nav-left" data-target="body">
+		<i class="icon-reorder icon-xlarge text-default"></i>
+	</button>
+	<ul class="nav navbar-nav hidden-sm">
+		<li>
+			<img src="img/backstage/logo.png" width="300px" height="40px">
+		</li>
+	</ul>
+
+</header>
+<nav id="nav" class="nav-primary visible-lg nav-vertical">
+	<ul class="nav" data-spy="affix" data-offset-top="50">
+		<li><a href="bs_forum.html"><i class="icon-comment icon-xlarge"></i>论坛管理</a></li>
+		<li class="active"><a href="bs_strategy.html"><i class="icon-th icon-xlarge"></i>攻略管理</a></li>
+		<li><a href="bs_users.html"><i class="icon-user icon-xlarge"></i>用户管理</a></li>
+		<li><a href="bs_news.html"><i class="icon-edit icon-xlarge"></i>新闻管理</a></li>
+		<li><a href="bs_game.html"><i class="icon-trophy icon-xlarge"></i>游戏管理</a></li>
+		<li onclick="outlogin()"><a href="javascript:"><i class="icon-off icon-xlarge"></i>退出登录</a></li>
+	</ul>
+</nav>
+
+<section id="content">
+	<section class="main padder">
+     <h3>攻略上传<span class="h6 text-danger m-l-large">(最多可添加5个步骤，一个步骤也可以上传）</span></h3>
+		<div class="row">
+			<div class="col-lg-12 m-b-small">
+				<div class="col-lg-3">
+					<input type="text" class="input-small form-control" v-model="gameid" placeholder="输入要添加攻略的游戏的id（不可为空）">
+				</div>
+			</div>
+			<div class="col-lg-12 m-b-small">
+				<div class="col-lg-3">
+					<input type="text" class="input-small form-control" v-model="stratitle" placeholder="输入攻略标题（不可为空）">
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<section class="comment-list block">
+					<article class="comment-item media arrow arrow-left" id="Step1">
+						<a class="pull-left thumb-small avatar">
+                         <img src="img/backstage/avatar.jpg" class="img-circle">
+                        </a>
+						<section class="media-body panel">
+							<header class="panel-heading clearfix">
+								步骤1
+							</header>
+							<div class="col-lg-12 m-t-small">
+								<textarea placeholder="输入攻略内容" rows="5" class="form-control"></textarea>
+							</div>
+							<div class="image-new">
+								<div class="addbox">
+									<input type="file" @change="getImgBase()">
+									<div class="addbtn">添加图片</div>
+								</div>
+								<div class="view">
+									<div class="item" v-for="(item, index) in imgBase64">
+										<span class="cancel-btn" @click="delImg(index)">x</span>
+										<img :src="item">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 m-t-small">
+								<a href="javascript:" class="btn btn-white btn-small btn-info" onclick="addstep()"><i class="icon-plus text-white"></i>添加步骤</a>
+							</div>
+						</section>
+					</article>
+
+					<article class="comment-item media" id="comment-form">
+						<button class="btn btn-primary" type="button" @click="addstrategy">上传攻略</button>
+					</article>
+				</section>
+			</div>
+		</div>
+	</section>
+	<section class="main padder">
+		<div class="clearfix">
+			<h4>攻略管理</h4>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<section class="panel">
+					<div class="row text-small">
+						<div class="col-lg-2">
+							<select id="searchtype" class="form-control">
+								<option value="0">选择搜索方式</option>
+								<option value="1">关键词</option>
+								<option value="2">攻略id</option>
+								<option value="3">游戏id</option>
+							</select>
+						</div>
+						<div class="col-lg-3">
+							<div class="input-group">
+								<input type="text" class="input-small form-control" v-model="searchword" placeholder="输入id或关键词进行搜索">
+								<span class="input-group-btn"><button class="btn btn-small btn-white" type="button" @click="search">搜索</button></span>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<button class="btn btn-small btn-success" @click="showallstr">显示所有攻略</button>
+						</div>
+					</div>
+					<div class="pull-out m-t-small">
+						<table class="table table-striped b-t text-small">
+							<thead>
+							<tr>
+								<th class="col-lg-1">攻略id</th>
+								<th class="col-lg-1">标题</th>
+								<th class="col-lg-2">步骤1</th>
+								<th class="col-lg-2">步骤2</th>
+								<th class="col-lg-1">步骤3</th>
+								<th class="col-lg-1">步骤4</th>
+								<th class="col-lg-1">步骤5</th>
+								<th class="col-lg-1">游戏id</th>
+								<th class="col-lg-1">时间</th>
+								<th class="col-lg-1">删除</th>
+							</tr>
+							</thead>
+							<tbody id="tbody">
+							<tr v-for="strlist of strlist">
+								<td>{{strlist.stra_id}}</td>
+								<td>{{strlist.stra_title}}</td>
+								<td>{{strlist.content1}}</td>
+								<td>{{strlist.content2}}</td>
+								<td>{{strlist.content3}}</td>
+								<td>{{strlist.content4}}</td>
+								<td>{{strlist.content5}}</td>
+								<td>{{strlist.game_id}}</td>
+								<td>{{strlist.time}}</td>
+								<td><a href="javascript:" class="active" onclick="deletestr(this)">
+									<i class="icon-remove icon-large text-danger text-active"></i>
+								</a></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<footer class="panel-footer">
+						<div class="row">
+							<div class="col-lg-8"></div>
+							<div class="col-lg-4 text-right text-center-sm">
+								<ul class="pagination pagination-small m-t-none m-b-none" id="page" style="display: none">
+									<li id="prev" @click="prevpage"><a href="javascript:"><i class="icon-chevron-left"></i></a></li>
+									<li @click="firstpage"><a href="javascript:">首页</a></li>
+									<li class="active"><a href="javascript:">1</a></li>
+									<li><a href="javascript:">/</a></li>
+									<li><a href="javascript:">4</a></li>
+									<li @click="lastpage"><a href="javascript:">尾页</a></li>
+									<li id="next" @click="nextpage"><a href="javascript:"><i class="icon-chevron-right"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</footer>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
+
+<footer id="footer">
+	<div class="text-center padder clearfix">
+		<p>
+			<small>Copyright&copy;2019 软工161莫慧兰</small><br><br>
+		</p>
+	</div>
+</footer>
+<a href="" class="hide slide-nav-block" data-toggle="class:slide-nav slide-nav-left" data-target="body"></a>
+
+
+<script src="js/bootstrap.js"></script>
+<script src="js/backstage/strategy_management/strategy.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+撤销发布的包： npm --force unpublish 包名
+
+重新初始化（ ipfs init）需要：del D:\IPFS\my_ipfs_root
+ /c/Users/Administrator/.ssh/id_rsa.pub.
+
+push:git pull 地址 git status  git add 文件/文件夹  git commit -m""   git push
+更新后push到github;1. git pull --rebase origin master
+                   2.git push origin master
+
+
+git下载镜像：https://npm.taobao.org/mirrors/git-for-windows/
+3、如果push遇到在输入密码是熟错后，就会报这个错误fatal: Authentication failed for
+
+解决办法：
+
+git config --system --unset credential.helper
+
+之后你在push就会提示输入名称和密码

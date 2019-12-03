@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>XM游戏资讯平台-论坛</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.4.css">
+	<!-- 点赞小图标 -->
+	<link rel="stylesheet" href="css/forum-stategy/ionicons.min.css">
+	<!-- 主体style -->
+	<link rel="stylesheet" href="css/forum-stategy/style.css">
+
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<!--导航栏css-->
+	<link rel="stylesheet" href="css/head.css" />
+	<style>
+		@media (max-width: 800px) {
+			body{
+				background-image: url("img/game/strabg4-1.jpg");
+			}
+		}
+	</style>
+</head>
+
+<body>
+<!-- 导航 -->
+<header class="header">
+	<div class="clearfix">
+		<div class="fl left">
+			<a href="javascript:void(0)" ><img src="img/forum/logo.png" alt="" class="img1" /></a>
+			<a href="javascript:void(0)" ><img src="img/forum/logo.png" alt="" class="img2" /></a>
+		</div>
+		<div class="fr nav">
+			<ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+				<li><a href="index.html">官网首页</a></li>
+				<li><a href="new.html">新闻资讯</a></li>
+				<li><a href="strategy.html">游戏攻略</a></li>
+				<li><a href="forum.html" style="color: orangered;">游戏论坛</a></li>
+				<li><a href="personal_center.html">个人中心</a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0)" id="navToggle">
+			<span></span>
+		</a>
+	</div>
+</header>
+<!--移动端的导航-->
+<div class="m_nav">
+	<div class="top clearfix">
+		<img src="img/forum/closed.png" alt="" class="closed" />
+	</div>
+	<div class="logo">
+		<img src="img/forum/logo.png" alt="" />
+	</div>
+	<ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+		<li><a href="index.html">官网首页</a></li>
+		<li><a href="new.html">新闻资讯</a></li>
+		<li><a href="strategy.html">游戏攻略</a></li>
+		<li class="active"><a href="forum.html" style="color: orangered;">游戏论坛</a></li>
+		<li><a href="personal_center.html">个人中心</a></li>
+	</ul>
+</div>
+
+<section class="category" id="forum">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 text-left">
+				<div class="row">
+					<div class="col-md-12">
+						<ol class="breadcrumb">
+							<li><a href="#">主页</a></li>
+							<li class="active">帖子</li>
+						</ol>
+						<h1 class="page-title">XM游戏资讯: 论坛</h1>
+						<p class="page-subtitle">展示所有的论坛帖 <i>All</i></p>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="row">
+					<article class="col-md-12 article-list" v-for="forum of dynamics">
+						<div class="inner">
+							<figure>
+								<a href="javascript:">
+									<img :src="forum.picture1" width="100%" height="100%">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="javascript:" @click="usercard(forum.uid,forum.uname,forum.picture,forum.introduce)">{{forum.uname}}</a>
+									</div>
+									<div class="time">{{forum.creation_time}}</div>
+
+								</div>
+								<h1 style="height: 115px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;">
+									<a href="javascript:">{{forum.content_text}}</a>
+								</h1>
+<!--								<p>-->
+<!--									{{forum.content_text}}-->
+<!--								</p>-->
+								<footer>
+									<a href="javascript:" class="love" @click="love($event)"><i class="ion-android-favorite-outline"></i>
+										<div>{{forum.praise_num}}</div>
+										<div style="display: none">{{forum.dynamics_id}}</div>
+									</a>
+									<a class="btn btn-primary more" @click="detail(forum.dynamics_id)">
+										<div>详细</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
+						</div>
+					</article>
+					<div class="col-md-12 text-center" id="page">
+						<ul class="pagination">
+							<li class="prev" @click="prevpage"><a href="javascript:"><i class="ion-ios-arrow-left"></i></a></li>
+							<li @click="firstpage"><a href="javascript:">首页</a></li>
+							<li  class="active"><a href="javascript:">1</a></li>
+							<li><a href="javascript:" style="background-color: white">/</a></li>
+							<li><a href="javascript:">97</a></li>
+							<li @click="lastpage"><a href="javascript:">尾页</a></li>
+							<li class="next" @click="nextpage"><a href="javascript:"><i class="ion-ios-arrow-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 sidebar">
+				<aside>
+					<div class="aside-body">
+						<figure class="ads">
+							<a href="single.html">
+								<img src="img/forum/bg.jpg">
+							</a>
+<!--							<figcaption>Advertisement</figcaption>-->
+						</figure>
+					</div>
+				</aside>
+				<aside>
+					<h1 class="aside-title">热门推荐</h1>
+					<div class="aside-body">
+						<article class="article-fw">
+							<div class="inner">
+								<figure>
+									<a href="book.html">
+										<img src="img/forum/book.jpg">
+									</a>
+								</figure>
+								<div class="details">
+									<h1 style="height: 65px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;">
+										<a href="book.html">千楼书活动</a></h1>
+									<p>用户可自行下载千楼书小说，修改后上传网站，可与其他用户进行分享探讨哦</p>
+								</div>
+							</div>
+						</article>
+						<div class="line"></div>
+						<article class="article-mini" v-for="hot of hotdynamics">
+							<div class="inner">
+								<figure>
+									<a href="single.html">
+										<img :src="hot.picture1">
+									</a>
+								</figure>
+								<div class="padding">
+									<h1 style="height: 42px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;">
+										<a href="javascript:" @click="detail(hot.dynamics_id)">{{hot.content_text}}</a></h1>
+									<div class="detail">
+										<div class="category"><a href="javascript:">{{hot.uname}}</a></div>
+										<div class="time">{{hot.creation_time}}</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</aside>
+
+			</div>
+		</div>
+	</div>
+	<!-- 用户卡片 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div style="position: relative">
+						<img width="80px" height="80px" :src="pc_picture">
+						<span style="position: absolute;bottom: 0px;margin-left: 20px"><h5>{{pc_uname}}</h5></span>
+					</div>
+					<div style="margin-top: 20px">个性签名：{{pc_introduce}}</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" @click="gz(pc_uid)">+关注</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<footer >
+	<div class="text-center padder clearfix">
+		<p>
+		<p>Copyright&copy;2019 软工161莫慧兰</p><br><br>
+		</p>
+	</div>
+</footer>
+<!-- JS -->
+<script src="js/forum-stategy/forum.js"></script>
+<script src="js/navbar.js"></script>
+</body>
+</html>

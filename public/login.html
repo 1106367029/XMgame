@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="css/login/user_login.css">
+</head>
+
+<body>
+<div id="app">
+	<div class="music-lgin" style="margin-top: 50px">
+		<div class="music-lgin-all">
+			<!--左手-->
+			<div class="music-lgin-left ovhd">
+				<div class="music-hand">
+					<div class="music-lgin-hara"></div>
+					<div class="music-lgin-hars"></div>
+				</div>
+			</div>
+
+			<!--脑袋-->
+			<div class="music-lgin-dh">
+				<div class="music-lgin-alls">
+					<div class="music-lgin-eyeleft">
+						<div class="music-left-eyeball yeball-l"></div>
+					</div>
+					<div class="music-lgin-eyeright">
+						<div class="music-right-eyeball yeball-r"></div>
+					</div>
+					<div class="music-lgin-cl"></div>
+				</div>
+				<!--鼻子-->
+				<div class="music-nose"></div>
+				<!--嘴-->
+				<div class="music-mouth music-mouth-ds"></div>
+				<!--肩-->
+				<div class="music-shoulder-l">
+					<div class="music-shoulder"></div>
+				</div>
+				<div class="music-shoulder-r">
+					<div class="music-shoulder"></div>
+				</div>
+				<!--消息框-->
+				<div class="music-news">来了,老弟！</div>
+			</div>
+
+			<!--右手-->
+			<div class="music-lgin-right ovhd">
+				<div class="music-hand">
+					<div class="music-lgin-hara"></div>
+					<div class="music-lgin-hars"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--登录-->
+		<div v-if="show==true">
+			<!--1-->
+			<div class="music-lgin-title">登录MX_游戏资讯平台</div>
+			<div class="music-lgin-text">
+				<input v-model="uname" @blur="unblur" class="inputname inputs" type="text" placeholder="请输入用户名">
+				<span id="nametips" v-cloak></span>
+			</div>
+			<!--2-->
+			<div class="music-lgin-text">
+				<input v-model="upwd" @blur="upblur" type="password" class="mima inputs" placeholder="请输入密码">
+				<span id="pwdtips" v-cloak></span>
+			</div>
+			<!--3-->
+			<div class="music-lgin-text">
+				<input id="userlogin" class="music-qd inputs" type="button" value="登录" @click="login">
+			</div>
+			<div class="music-lgin-bottom"><span style="float: left;">忘记密码</span><span style="float: right;"><a
+					@click="reg">新用户注册</a> </span>
+			</div>
+		</div>
+		<!-- 注册 -->
+		<div class="register" id="register" v-else>
+			<div class="register-title">用户注册</div>
+			<input type="text" placeholder="请输入用户名字" v-model="reguname" @blur="regunblur">
+			<span id="tipsname">&nbsp;</span>
+			<input type="password" placeholder="请输入8-16个字符的密码，包含大小写字母和数字" v-model="regupwd" @blur="regupwdblur">
+			<span id="tipspwd">&nbsp;</span>
+			<input type="password" placeholder="确认密码" v-model="cregupwd" @blur="cregupwdblur">
+			<span id="tipscpwd">&nbsp;</span>
+			<input type="text" placeholder="请输入邮箱" v-model="email" @blur="emailblur">
+			<span id="tipsemail">&nbsp;</span>
+			<input type="text" placeholder="请输入手机号码" v-model="phone" @blur="phoneblur">
+			<span id="tipsphone">&nbsp;</span>
+			<button id="regbtn" @click="regs">注册</button>
+		</div>
+	</div>
+	<footer>Copyright&copy;2019 软工161莫慧兰</footer>
+</div>
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/login/login.js"></script>
+
+
+</body>
+
+</html>

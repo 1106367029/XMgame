@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<title>Mobile first web app theme | first</title>
+<meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="css/bootstrap-3.3.4.css">
+<link rel="stylesheet" href="css/backstage/font-awesome.min.css">
+<link rel="stylesheet" href="css/backstage/style.css">
+</head>
+<body>
+
+<header id="header" class="navbar">
+<ul class="nav navbar-nav navbar-avatar pull-right">
+<li class="dropdown">
+<a href="" class="dropdown-toggle" data-toggle="dropdown">
+<span class="hidden-sm-only">Mika Sokeil</span>
+<span class="thumb-small avatar inline"><img src="images/avatar.jpg" alt="Mika Sokeil" class="img-circle"></span>
+<b class="caret hidden-sm-only"></b>
+</a>
+<ul class="dropdown-menu">
+<li><a href="">Settings</a></li>
+<li><a href="">Profile</a></li>
+<li><a href=""><span class="badge bg-danger pull-right">3</span>Notifications</a></li>
+<li class="divider"></li>
+<li><a href="docs.html">Help</a></li>
+<li><a href="signin.html">Logout</a></li>
+</ul>
+</li>
+</ul>
+<a class="navbar-brand" href="">first</a>
+<button type="button" class="btn btn-link pull-left nav-toggle hidden-lg" data-toggle="class:show" data-target="#nav">
+<i class="icon-reorder icon-xlarge text-default"></i>
+</button>
+<ul class="nav navbar-nav hidden-sm">
+<li>
+<div class="m-t m-b-small" id="panel-notifications">
+<a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment-alt icon-xlarge text-default"></i><b class="badge badge-notes bg-danger count-n">2</b></a>
+<section class="dropdown-menu m-l-small m-t-mini">
+<section class="panel panel-large arrow arrow-top">
+<header class="panel-heading bg-white"><span class="h5"><strong>You have <span class="count-n">2</span> notifications</strong></span></header>
+<div class="list-group list-group-flush m-t-n">
+<a href="" class="media list-group-item">
+<span class="pull-left thumb-small"><img src="images/avatar.jpg" alt="John said" class="img-circle"></span>
+<span class="media-body block m-b-none">
+Moved to Bootstrap 3.0<br>
+<small class="text-muted">23 June 13</small>
+</span>
+</a>
+<a href="" class="media list-group-item">
+<span class="media-body block m-b-none">
+first v.1 (Bootstrap 2.3 based) released<br>
+<small class="text-muted">19 June 13</small>
+</span>
+</a>
+</div>
+<footer class="panel-footer text-small">
+<a href="" class="pull-right"><i class="icon-cog"></i></a>
+<a href="">See all the notifications</a>
+</footer>
+</section>
+</section>
+</div>
+</li>
+<li><div class="m-t-small"><a class="btn btn-small btn-info" data-toggle="modal" href=""><i class="icon-plus"></i> POST</a></div></li>
+<li class="dropdown shift" data-toggle="shift:appendTo" data-target=".nav-primary .nav">
+<a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-xlarge visible-sm visible-sm-inline"></i>Settings <b class="caret hidden-sm-only"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a href="" data-toggle="class:navbar-fixed" data-target='body'>Navbar
+<span class="text-active">auto</span>
+<span class="text">fixed</span>
+</a>
+</li>
+<li class="visible-lg">
+<a href="" data-toggle="class:nav-vertical" data-target="#nav">Nav
+<span class="text-active">vertical</span>
+<span class="text">horizontal</span>
+</a>
+</li>
+<li class="divider hidden-sm"></li>
+<li class="dropdown-header">Colors</li>
+<li>
+<a href="" data-toggle="class:bg bg-black" data-target='.navbar'>Navbar
+<span class="text-active">white</span>
+<span class="text">inverse</span>
+</a>
+</li>
+<li>
+<a href="" data-toggle="class:bg-light" data-target='#nav'>Nav
+<span class="text-active">inverse</span>
+<span class="text">light</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<form class="navbar-form pull-left shift" action="" data-toggle="shift:appendTo" data-target=".nav-primary">
+<i class="icon-search text-muted"></i>
+<input type="text" class="input-small form-control" placeholder="Search">
+</form>
+</header>
+
+
+<nav id="nav" class="nav-primary visible-lg nav-vertical">
+<ul class="nav" data-spy="affix" data-offset-top="50">
+<li><a href="index1.html"><i class="icon-dashboard icon-xlarge"></i>Dashboard</a></li>
+<li class="dropdown-submenu active">
+<a href=""><i class="icon-th icon-xlarge"></i>Elements</a>
+<ul class="dropdown-menu">
+<li><a href="buttons.html">Buttons</a></li>
+<li><a href=""><b class="badge pull-right">302</b>Icons</a></li>
+<li><a href="grid.html">Grid</a></li>
+<li><a href="widgets.html"><b class="badge bg-primary pull-right">8</b>Widgets</a></li>
+<li><a href="components.html"><b class="badge pull-right">18</b>Components</a></li>
+</ul>
+</li>
+<li class="dropdown-submenu">
+<a href=""><i class="icon-list icon-xlarge"></i>Lists</a>
+<ul class="dropdown-menu">
+<li><a href="list.html">List groups</a></li>
+<li><a href="bs_users.html">Table</a></li>
+</ul>
+</li>
+<li><a href="新闻发布管理.html"><i class="icon-edit icon-xlarge"></i>Form</a></li>
+<li><a href="chart.html"><i class="icon-signal icon-xlarge"></i>Chart</a></li>
+<li class="dropdown-submenu">
+<a href=""><i class="icon-link icon-xlarge"></i>Others</a>
+<ul class="dropdown-menu">
+<li><a href="signin.html">Signin page</a></li>
+<li><a href="signup.html">Signup page</a></li>
+<li><a href="404.html">404 page</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+<section id="content">
+<section class="main padder">
+<div class="clearfix">
+<h4><i class="icon-info"></i>cons</h4>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<section class="panel text-small">
+<header class="panel-heading">
+FontAwesome! <span class="label label-large bg-info">3.2</span>
+</header>
+<div class="row">
+<div class="col-lg-4">
+<h4><i class="icon-flag"></i> One Font, 361 Icons</h4>
+In a single collection, Font Awesome is a pictographic language of web-related actions.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-pencil"></i> CSS Control</h4>
+Easily style icon color, size, shadow, and anything that's possible with CSS.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-fullscreen"></i> Infinite Scalability</h4>
+Scalable vector graphics means every icon looks awesome at any size.
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<h4><i class="icon-beer"></i> Free, as in Beer</h4>
+Font Awesome is completely free for commercial use. Check out the <a href="license/Index.html">license</a>.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-ok"></i> IE7 Support</h4>
+Font Awesome supports IE7. If you need it, you have my condolences.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-eye-open"></i> Perfect on Retina Displays</h4>
+Font Awesome icons are vectors, which mean they're gorgeous on high-resolution displays.
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4">
+<h4><i class="icon-thumbs-up"></i> Made for Bootstrap</h4>
+Designed from scratch to be fully compatible with <a href="javascript:;">Bootstrap 2.3.1</a>.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-desktop"></i> Desktop Friendly</h4>
+To use on the desktop or for a complete set of vectors,
+check out the <a href="javascript:;">cheatsheet</a>.
+</div>
+<div class="col-lg-4">
+<h4><i class="icon-search"></i> Screen Reader Compatible</h4>
+Font Awesome won't trip up screen readers, unlike other icon fonts.
+</div>
+</div>
+</section>
+<div>
+<div id="new">
+<h4 class="page-header">New Icons in 3.2</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/compass.html"><i class="icon-compass"></i> icon-compass</a></div>
+<div class="col-lg-3"><a href="../icon/collapse.html"><i class="icon-collapse"></i> icon-collapse</a></div>
+<div class="col-lg-3"><a href="../icon/collapse-top.html"><i class="icon-collapse-top"></i> icon-collapse-top</a></div>
+<div class="col-lg-3"><a href="../icon/expand.html"><i class="icon-expand"></i> icon-expand</a></div>
+<div class="col-lg-3"><a href="../icon/eur.html"><i class="icon-eur"></i> icon-eur</a></div>
+<div class="col-lg-3"><a href="../icon/eur.html"><i class="icon-euro"></i> icon-euro <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/gbp.html"><i class="icon-gbp"></i> icon-gbp</a></div>
+<div class="col-lg-3"><a href="../icon/usd.html"><i class="icon-usd"></i> icon-usd</a></div>
+<div class="col-lg-3"><a href="../icon/usd.html"><i class="icon-dollar"></i> icon-dollar <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/inr.html"><i class="icon-inr"></i> icon-inr</a></div>
+<div class="col-lg-3"><a href="../icon/inr.html"><i class="icon-rupee"></i> icon-rupee <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/jpy.html"><i class="icon-jpy"></i> icon-jpy</a></div>
+<div class="col-lg-3"><a href="../icon/jpy.html"><i class="icon-yen"></i> icon-yen <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/cny.html"><i class="icon-cny"></i> icon-cny</a></div>
+<div class="col-lg-3"><a href="../icon/cny.html"><i class="icon-renminbi"></i> icon-renminbi <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/krw.html"><i class="icon-krw"></i> icon-krw</a></div>
+<div class="col-lg-3"><a href="../icon/krw.html"><i class="icon-won"></i> icon-won <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-btc"></i> icon-btc</a></div>
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/file.html"><i class="icon-file"></i> icon-file</a></div>
+<div class="col-lg-3"><a href="../icon/file-text.html"><i class="icon-file-text"></i> icon-file-text</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-alphabet.html"><i class="icon-sort-by-alphabet"></i> icon-sort-by-alphabet</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-alphabet-alt.html"><i class="icon-sort-by-alphabet-alt"></i> icon-sort-by-alphabet-alt</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-attributes.html"><i class="icon-sort-by-attributes"></i> icon-sort-by-attributes</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-attributes-alt.html"><i class="icon-sort-by-attributes-alt"></i> icon-sort-by-attributes-alt</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-order.html"><i class="icon-sort-by-order"></i> icon-sort-by-order</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-order-alt.html"><i class="icon-sort-by-order-alt"></i> icon-sort-by-order-alt</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-up.html"><i class="icon-thumbs-up"></i> icon-thumbs-up</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-down.html"><i class="icon-thumbs-down"></i> icon-thumbs-down</a></div>
+<div class="col-lg-3"><a href="../icon/youtube-sign.html"><i class="icon-youtube-sign"></i> icon-youtube-sign</a></div>
+<div class="col-lg-3"><a href="../icon/youtube.html"><i class="icon-youtube"></i> icon-youtube</a></div>
+<div class="col-lg-3"><a href="../icon/xing.html"><i class="icon-xing"></i> icon-xing</a></div>
+<div class="col-lg-3"><a href="../icon/xing-sign.html"><i class="icon-xing-sign"></i> icon-xing-sign</a></div>
+<div class="col-lg-3"><a href="../icon/youtube-play.html"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+<div class="col-lg-3"><a href="../icon/dropbox.html"><i class="icon-dropbox"></i> icon-dropbox</a></div>
+<div class="col-lg-3"><a href="../icon/stackexchange.html"><i class="icon-stackexchange"></i> icon-stackexchange</a></div>
+<div class="col-lg-3"><a href="../icon/instagram.html"><i class="icon-instagram"></i> icon-instagram</a></div>
+<div class="col-lg-3"><a href="../icon/flickr.html"><i class="icon-flickr"></i> icon-flickr</a></div>
+<div class="col-lg-3"><a href="../icon/adn.html"><i class="icon-adn"></i> icon-adn</a></div>
+<div class="col-lg-3"><a href="../icon/bitbucket.html"><i class="icon-bitbucket"></i> icon-bitbucket</a></div>
+<div class="col-lg-3"><a href="../icon/bitbucket-sign.html"><i class="icon-bitbucket-sign"></i> icon-bitbucket-sign</a></div>
+<div class="col-lg-3"><a href="../icon/tumblr.html"><i class="icon-tumblr"></i> icon-tumblr</a></div>
+<div class="col-lg-3"><a href="../icon/tumblr-sign.html"><i class="icon-tumblr-sign"></i> icon-tumblr-sign</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-down.html"><i class="icon-long-arrow-down"></i> icon-long-arrow-down</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-up.html"><i class="icon-long-arrow-up"></i> icon-long-arrow-up</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-left.html"><i class="icon-long-arrow-left"></i> icon-long-arrow-left</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-right.html"><i class="icon-long-arrow-right"></i> icon-long-arrow-right</a></div>
+<div class="col-lg-3"><a href="../icon/apple.html"><i class="icon-apple"></i> icon-apple</a></div>
+<div class="col-lg-3"><a href="../icon/windows.html"><i class="icon-windows"></i> icon-windows</a></div>
+<div class="col-lg-3"><a href="../icon/android.html"><i class="icon-android"></i> icon-android</a></div>
+<div class="col-lg-3"><a href="../icon/linux.html"><i class="icon-linux"></i> icon-linux</a></div>
+<div class="col-lg-3"><a href="../icon/dribbble.html"><i class="icon-dribbble"></i> icon-dribbble</a></div>
+<div class="col-lg-3"><a href="../icon/skype.html"><i class="icon-skype"></i> icon-skype</a></div>
+<div class="col-lg-3"><a href="../icon/foursquare.html"><i class="icon-foursquare"></i> icon-foursquare</a></div>
+<div class="col-lg-3"><a href="../icon/trello.html"><i class="icon-trello"></i> icon-trello</a></div>
+<div class="col-lg-3"><a href="../icon/female.html"><i class="icon-female"></i> icon-female</a></div>
+<div class="col-lg-3"><a href="../icon/male.html"><i class="icon-male"></i> icon-male</a></div>
+<div class="col-lg-3"><a href="../icon/gittip.html"><i class="icon-gittip"></i> icon-gittip</a></div>
+<div class="col-lg-3"><a href="../icon/sun.html"><i class="icon-sun"></i> icon-sun</a></div>
+<div class="col-lg-3"><a href="../icon/moon.html"><i class="icon-moon"></i> icon-moon</a></div>
+<div class="col-lg-3"><a href="../icon/archive.html"><i class="icon-archive"></i> icon-archive</a></div>
+<div class="col-lg-3"><a href="../icon/bug.html"><i class="icon-bug"></i> icon-bug</a></div>
+<div class="col-lg-3"><a href="../icon/vk.html"><i class="icon-vk"></i> icon-vk</a></div>
+<div class="col-lg-3"><a href="../icon/weibo.html"><i class="icon-weibo"></i> icon-weibo</a></div>
+<div class="col-lg-3"><a href="../icon/renren.html"><i class="icon-renren"></i> icon-renren</a></div>
+</div>
+</div>
+<section id="web-application">
+<h4 class="page-header">Web Application Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/adjust.html"><i class="icon-adjust"></i> icon-adjust</a></div>
+<div class="col-lg-3"><a href="../icon/anchor.html"><i class="icon-anchor"></i> icon-anchor</a></div>
+<div class="col-lg-3"><a href="../icon/archive.html"><i class="icon-archive"></i> icon-archive</a></div>
+<div class="col-lg-3"><a href="../icon/asterisk.html"><i class="icon-asterisk"></i> icon-asterisk</a></div>
+<div class="col-lg-3"><a href="../icon/ban-circle.html"><i class="icon-ban-circle"></i> icon-ban-circle</a></div>
+ <div class="col-lg-3"><a href="../icon/bar-chart.html"><i class="icon-bar-chart"></i> icon-bar-chart</a></div>
+<div class="col-lg-3"><a href="../icon/barcode.html"><i class="icon-barcode"></i> icon-barcode</a></div>
+<div class="col-lg-3"><a href="../icon/beaker.html"><i class="icon-beaker"></i> icon-beaker</a></div>
+<div class="col-lg-3"><a href="../icon/beer.html"><i class="icon-beer"></i> icon-beer</a></div>
+<div class="col-lg-3"><a href="../icon/bell.html"><i class="icon-bell"></i> icon-bell</a></div>
+<div class="col-lg-3"><a href="../icon/bell-alt.html"><i class="icon-bell-alt"></i> icon-bell-alt</a></div>
+<div class="col-lg-3"><a href="../icon/bolt.html"><i class="icon-bolt"></i> icon-bolt</a></div>
+<div class="col-lg-3"><a href="../icon/book.html"><i class="icon-book"></i> icon-book</a></div>
+<div class="col-lg-3"><a href="../icon/bookmark.html"><i class="icon-bookmark"></i> icon-bookmark</a></div>
+<div class="col-lg-3"><a href="../icon/bookmark-empty.html"><i class="icon-bookmark-empty"></i> icon-bookmark-empty</a></div>
+<div class="col-lg-3"><a href="../icon/briefcase.html"><i class="icon-briefcase"></i> icon-briefcase</a></div>
+<div class="col-lg-3"><a href="../icon/bug.html"><i class="icon-bug"></i> icon-bug</a></div>
+<div class="col-lg-3"><a href="../icon/building.html"><i class="icon-building"></i> icon-building</a></div>
+<div class="col-lg-3"><a href="../icon/bullhorn.html"><i class="icon-bullhorn"></i> icon-bullhorn</a></div>
+<div class="col-lg-3"><a href="../icon/bullseye.html"><i class="icon-bullseye"></i> icon-bullseye</a></div>
+<div class="col-lg-3"><a href="../icon/calendar.html"><i class="icon-calendar"></i> icon-calendar</a></div>
+<div class="col-lg-3"><a href="../icon/calendar-empty.html"><i class="icon-calendar-empty"></i> icon-calendar-empty</a></div>
+<div class="col-lg-3"><a href="../icon/camera.html"><i class="icon-camera"></i> icon-camera</a></div>
+<div class="col-lg-3"><a href="../icon/camera-retro.html"><i class="icon-camera-retro"></i> icon-camera-retro</a></div>
+<div class="col-lg-3"><a href="../icon/certificate.html"><i class="icon-certificate"></i> icon-certificate</a></div>
+<div class="col-lg-3"><a href="../icon/check.html"><i class="icon-check"></i> icon-check</a></div>
+<div class="col-lg-3"><a href="../icon/check-empty.html"><i class="icon-check-empty"></i> icon-check-empty</a></div>
+<div class="col-lg-3"><a href="../icon/check-minus.html"><i class="icon-check-minus"></i> icon-check-minus</a></div>
+<div class="col-lg-3"><a href="../icon/check-sign.html"><i class="icon-check-sign"></i> icon-check-sign</a></div>
+<div class="col-lg-3"><a href="../icon/circle.html"><i class="icon-circle"></i> icon-circle</a></div>
+<div class="col-lg-3"><a href="../icon/circle-blank.html"><i class="icon-circle-blank"></i> icon-circle-blank</a></div>
+<div class="col-lg-3"><a href="../icon/cloud.html"><i class="icon-cloud"></i> icon-cloud</a></div>
+<div class="col-lg-3"><a href="../icon/cloud-download.html"><i class="icon-cloud-download"></i> icon-cloud-download</a></div>
+<div class="col-lg-3"><a href="../icon/cloud-upload.html"><i class="icon-cloud-upload"></i> icon-cloud-upload</a></div>
+<div class="col-lg-3"><a href="../icon/code.html"><i class="icon-code"></i> icon-code</a></div>
+<div class="col-lg-3"><a href="../icon/code-fork.html"><i class="icon-code-fork"></i> icon-code-fork</a></div>
+<div class="col-lg-3"><a href="../icon/coffee.html"><i class="icon-coffee"></i> icon-coffee</a></div>
+<div class="col-lg-3"><a href="../icon/cog.html"><i class="icon-cog"></i> icon-cog</a></div>
+<div class="col-lg-3"><a href="../icon/cogs.html"><i class="icon-cogs"></i> icon-cogs</a></div>
+<div class="col-lg-3"><a href="../icon/collapse.html"><i class="icon-collapse"></i> icon-collapse</a></div>
+<div class="col-lg-3"><a href="../icon/collapse-alt.html"><i class="icon-collapse-alt"></i> icon-collapse-alt</a></div>
+<div class="col-lg-3"><a href="../icon/collapse-top.html"><i class="icon-collapse-top"></i> icon-collapse-top</a></div>
+<div class="col-lg-3"><a href="../icon/comment.html"><i class="icon-comment"></i> icon-comment</a></div>
+<div class="col-lg-3"><a href="../icon/comment-alt.html"><i class="icon-comment-alt"></i> icon-comment-alt</a></div>
+<div class="col-lg-3"><a href="../icon/comments.html"><i class="icon-comments"></i> icon-comments</a></div>
+<div class="col-lg-3"><a href="../icon/comments-alt.html"><i class="icon-comments-alt"></i> icon-comments-alt</a></div>
+<div class="col-lg-3"><a href="../icon/compass.html"><i class="icon-compass"></i> icon-compass</a></div>
+<div class="col-lg-3"><a href="../icon/credit-card.html"><i class="icon-credit-card"></i> icon-credit-card</a></div>
+<div class="col-lg-3"><a href="../icon/crop.html"><i class="icon-crop"></i> icon-crop</a></div>
+<div class="col-lg-3"><a href="../icon/dashboard.html"><i class="icon-dashboard"></i> icon-dashboard</a></div>
+<div class="col-lg-3"><a href="../icon/desktop.html"><i class="icon-desktop"></i> icon-desktop</a></div>
+<div class="col-lg-3"><a href="../icon/download.html"><i class="icon-download"></i> icon-download</a></div>
+<div class="col-lg-3"><a href="../icon/download-alt.html"><i class="icon-download-alt"></i> icon-download-alt</a></div>
+<div class="col-lg-3"><a href="../icon/edit.html"><i class="icon-edit"></i> icon-edit</a></div>
+<div class="col-lg-3"><a href="../icon/edit-sign.html"><i class="icon-edit-sign"></i> icon-edit-sign</a></div>
+<div class="col-lg-3"><a href="../icon/ellipsis-horizontal.html"><i class="icon-ellipsis-horizontal"></i> icon-ellipsis-horizontal</a></div>
+<div class="col-lg-3"><a href="../icon/ellipsis-vertical.html"><i class="icon-ellipsis-vertical"></i> icon-ellipsis-vertical</a></div>
+<div class="col-lg-3"><a href="../icon/envelope.html"><i class="icon-envelope"></i> icon-envelope</a></div>
+<div class="col-lg-3"><a href="../icon/envelope-alt.html"><i class="icon-envelope-alt"></i> icon-envelope-alt</a></div>
+<div class="col-lg-3"><a href="../icon/eraser.html"><i class="icon-eraser"></i> icon-eraser</a></div>
+<div class="col-lg-3"><a href="../icon/exchange.html"><i class="icon-exchange"></i> icon-exchange</a></div>
+<div class="col-lg-3"><a href="../icon/exclamation.html"><i class="icon-exclamation"></i> icon-exclamation</a></div>
+ <div class="col-lg-3"><a href="../icon/exclamation-sign.html"><i class="icon-exclamation-sign"></i> icon-exclamation-sign</a></div>
+<div class="col-lg-3"><a href="../icon/expand.html"><i class="icon-expand"></i> icon-expand</a></div>
+<div class="col-lg-3"><a href="../icon/expand-alt.html"><i class="icon-expand-alt"></i> icon-expand-alt</a></div>
+<div class="col-lg-3"><a href="../icon/external-link.html"><i class="icon-external-link"></i> icon-external-link</a></div>
+<div class="col-lg-3"><a href="../icon/external-link-sign.html"><i class="icon-external-link-sign"></i> icon-external-link-sign</a></div>
+<div class="col-lg-3"><a href="../icon/eye-close.html"><i class="icon-eye-close"></i> icon-eye-close</a></div>
+<div class="col-lg-3"><a href="../icon/eye-open.html"><i class="icon-eye-open"></i> icon-eye-open</a></div>
+<div class="col-lg-3"><a href="../icon/facetime-video.html"><i class="icon-facetime-video"></i> icon-facetime-video</a></div>
+<div class="col-lg-3"><a href="../icon/female.html"><i class="icon-female"></i> icon-female</a></div>
+<div class="col-lg-3"><a href="../icon/fighter-jet.html"><i class="icon-fighter-jet"></i> icon-fighter-jet</a></div>
+<div class="col-lg-3"><a href="../icon/film.html"><i class="icon-film"></i> icon-film</a></div>
+<div class="col-lg-3"><a href="../icon/filter.html"><i class="icon-filter"></i> icon-filter</a></div>
+<div class="col-lg-3"><a href="../icon/fire.html"><i class="icon-fire"></i> icon-fire</a></div>
+<div class="col-lg-3"><a href="../icon/fire-extinguisher.html"><i class="icon-fire-extinguisher"></i> icon-fire-extinguisher</a></div>
+<div class="col-lg-3"><a href="../icon/flag.html"><i class="icon-flag"></i> icon-flag</a></div>
+<div class="col-lg-3"><a href="../icon/flag-alt.html"><i class="icon-flag-alt"></i> icon-flag-alt</a></div>
+<div class="col-lg-3"><a href="../icon/flag-checkered.html"><i class="icon-flag-checkered"></i> icon-flag-checkered</a></div>
+<div class="col-lg-3"><a href="../icon/folder-close.html"><i class="icon-folder-close"></i> icon-folder-close</a></div>
+<div class="col-lg-3"><a href="../icon/folder-close-alt.html"><i class="icon-folder-close-alt"></i> icon-folder-close-alt</a></div>
+<div class="col-lg-3"><a href="../icon/folder-open.html"><i class="icon-folder-open"></i> icon-folder-open</a></div>
+<div class="col-lg-3"><a href="../icon/folder-open-alt.html"><i class="icon-folder-open-alt"></i> icon-folder-open-alt</a></div>
+<div class="col-lg-3"><a href="../icon/food.html"><i class="icon-food"></i> icon-food</a></div>
+<div class="col-lg-3"><a href="../icon/frown.html"><i class="icon-frown"></i> icon-frown</a></div>
+<div class="col-lg-3"><a href="../icon/gamepad.html"><i class="icon-gamepad"></i> icon-gamepad</a></div>
+<div class="col-lg-3"><a href="../icon/cog.html"><i class="icon-gear"></i> icon-gear <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/cogs.html"><i class="icon-gears"></i> icon-gears <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/gift.html"><i class="icon-gift"></i> icon-gift</a></div>
+<div class="col-lg-3"><a href="../icon/glass.html"><i class="icon-glass"></i> icon-glass</a></div>
+<div class="col-lg-3"><a href="../icon/globe.html"><i class="icon-globe"></i> icon-globe</a></div>
+<div class="col-lg-3"><a href="../icon/group.html"><i class="icon-group"></i> icon-group</a></div>
+<div class="col-lg-3"><a href="../icon/hdd.html"><i class="icon-hdd"></i> icon-hdd</a></div>
+<div class="col-lg-3"><a href="../icon/headphones.html"><i class="icon-headphones"></i> icon-headphones</a></div>
+<div class="col-lg-3"><a href="../icon/heart.html"><i class="icon-heart"></i> icon-heart</a></div>
+<div class="col-lg-3"><a href="../icon/heart-empty.html"><i class="icon-heart-empty"></i> icon-heart-empty</a></div>
+<div class="col-lg-3"><a href="../icon/home.html"><i class="icon-home"></i> icon-home</a></div>
+<div class="col-lg-3"><a href="../icon/inbox.html"><i class="icon-inbox"></i> icon-inbox</a></div>
+<div class="col-lg-3"><a href="../icon/info.html"><i class="icon-info"></i> icon-info</a></div>
+<div class="col-lg-3"><a href="../icon/info-sign.html"><i class="icon-info-sign"></i> icon-info-sign</a></div>
+<div class="col-lg-3"><a href="../icon/key.html"><i class="icon-key"></i> icon-key</a></div>
+<div class="col-lg-3"><a href="../icon/keyboard.html"><i class="icon-keyboard"></i> icon-keyboard</a></div>
+<div class="col-lg-3"><a href="../icon/laptop.html"><i class="icon-laptop"></i> icon-laptop</a></div>
+<div class="col-lg-3"><a href="../icon/leaf.html"><i class="icon-leaf"></i> icon-leaf</a></div>
+<div class="col-lg-3"><a href="../icon/legal.html"><i class="icon-legal"></i> icon-legal</a></div>
+<div class="col-lg-3"><a href="../icon/lemon.html"><i class="icon-lemon"></i> icon-lemon</a></div>
+<div class="col-lg-3"><a href="../icon/level-down.html"><i class="icon-level-down"></i> icon-level-down</a></div>
+<div class="col-lg-3"><a href="../icon/level-up.html"><i class="icon-level-up"></i> icon-level-up</a></div>
+<div class="col-lg-3"><a href="../icon/lightbulb.html"><i class="icon-lightbulb"></i> icon-lightbulb</a></div>
+<div class="col-lg-3"><a href="../icon/location-arrow.html"><i class="icon-location-arrow"></i> icon-location-arrow</a></div>
+<div class="col-lg-3"><a href="../icon/lock.html"><i class="icon-lock"></i> icon-lock</a></div>
+<div class="col-lg-3"><a href="../icon/magic.html"><i class="icon-magic"></i> icon-magic</a></div>
+<div class="col-lg-3"><a href="../icon/magnet.html"><i class="icon-magnet"></i> icon-magnet</a></div>
+<div class="col-lg-3"><a href="../icon/share-alt.html"><i class="icon-mail-forward"></i> icon-mail-forward <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/reply.html"><i class="icon-mail-reply"></i> icon-mail-reply <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/mail-reply-all.html"><i class="icon-mail-reply-all"></i> icon-mail-reply-all</a></div>
+<div class="col-lg-3"><a href="../icon/male.html"><i class="icon-male"></i> icon-male</a></div>
+<div class="col-lg-3"><a href="../icon/map-marker.html"><i class="icon-map-marker"></i> icon-map-marker</a></div>
+<div class="col-lg-3"><a href="../icon/meh.html"><i class="icon-meh"></i> icon-meh</a></div>
+<div class="col-lg-3"><a href="../icon/microphone.html"><i class="icon-microphone"></i> icon-microphone</a></div>
+<div class="col-lg-3"><a href="../icon/microphone-off.html"><i class="icon-microphone-off"></i> icon-microphone-off</a></div>
+<div class="col-lg-3"><a href="../icon/minus.html"><i class="icon-minus"></i> icon-minus</a></div>
+<div class="col-lg-3"><a href="../icon/minus-sign.html"><i class="icon-minus-sign"></i> icon-minus-sign</a></div>
+<div class="col-lg-3"><a href="../icon/minus-sign-alt.html"><i class="icon-minus-sign-alt"></i> icon-minus-sign-alt</a></div>
+<div class="col-lg-3"><a href="../icon/mobile-phone.html"><i class="icon-mobile-phone"></i> icon-mobile-phone</a></div>
+<div class="col-lg-3"><a href="../icon/money.html"><i class="icon-money"></i> icon-money</a></div>
+<div class="col-lg-3"><a href="../icon/moon.html"><i class="icon-moon"></i> icon-moon</a></div>
+<div class="col-lg-3"><a href="../icon/move.html"><i class="icon-move"></i> icon-move</a></div>
+<div class="col-lg-3"><a href="../icon/music.html"><i class="icon-music"></i> icon-music</a></div>
+<div class="col-lg-3"><a href="../icon/off.html"><i class="icon-off"></i> icon-off</a></div>
+<div class="col-lg-3"><a href="../icon/ok.html"><i class="icon-ok"></i> icon-ok</a></div>
+<div class="col-lg-3"><a href="../icon/ok-circle.html"><i class="icon-ok-circle"></i> icon-ok-circle</a></div>
+<div class="col-lg-3"><a href="../icon/ok-sign.html"><i class="icon-ok-sign"></i> icon-ok-sign</a></div>
+<div class="col-lg-3"><a href="../icon/pencil.html"><i class="icon-pencil"></i> icon-pencil</a></div>
+<div class="col-lg-3"><a href="../icon/phone.html"><i class="icon-phone"></i> icon-phone</a></div>
+<div class="col-lg-3"><a href="../icon/phone-sign.html"><i class="icon-phone-sign"></i> icon-phone-sign</a></div>
+<div class="col-lg-3"><a href="../icon/picture.html"><i class="icon-picture"></i> icon-picture</a></div>
+<div class="col-lg-3"><a href="../icon/plane.html"><i class="icon-plane"></i> icon-plane</a></div>
+<div class="col-lg-3"><a href="../icon/plus.html"><i class="icon-plus"></i> icon-plus</a></div>
+<div class="col-lg-3"><a href="../icon/plus-sign.html"><i class="icon-plus-sign"></i> icon-plus-sign</a></div>
+<div class="col-lg-3"><a href="../icon/plus-sign-alt.html"><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</a></div>
+<div class="col-lg-3"><a href="../icon/off.html"><i class="icon-power-off"></i> icon-power-off <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/print.html"><i class="icon-print"></i> icon-print</a></div>
+<div class="col-lg-3"><a href="../icon/pushpin.html"><i class="icon-pushpin"></i> icon-pushpin</a></div>
+<div class="col-lg-3"><a href="../icon/puzzle-piece.html"><i class="icon-puzzle-piece"></i> icon-puzzle-piece</a></div>
+<div class="col-lg-3"><a href="../icon/qrcode.html"><i class="icon-qrcode"></i> icon-qrcode</a></div>
+<div class="col-lg-3"><a href="../icon/question.html"><i class="icon-question"></i> icon-question</a></div>
+<div class="col-lg-3"><a href="../icon/question-sign.html"><i class="icon-question-sign"></i> icon-question-sign</a></div>
+<div class="col-lg-3"><a href="../icon/quote-left.html"><i class="icon-quote-left"></i> icon-quote-left</a></div>
+<div class="col-lg-3"><a href="../icon/quote-right.html"><i class="icon-quote-right"></i> icon-quote-right</a></div>
+<div class="col-lg-3"><a href="../icon/random.html"><i class="icon-random"></i> icon-random</a></div>
+<div class="col-lg-3"><a href="../icon/refresh.html"><i class="icon-refresh"></i> icon-refresh</a></div>
+<div class="col-lg-3"><a href="../icon/remove.html"><i class="icon-remove"></i> icon-remove</a></div>
+<div class="col-lg-3"><a href="../icon/remove-circle.html"><i class="icon-remove-circle"></i> icon-remove-circle</a></div>
+<div class="col-lg-3"><a href="../icon/remove-sign.html"><i class="icon-remove-sign"></i> icon-remove-sign</a></div>
+<div class="col-lg-3"><a href="../icon/reorder.html"><i class="icon-reorder"></i> icon-reorder</a></div>
+<div class="col-lg-3"><a href="../icon/reply.html"><i class="icon-reply"></i> icon-reply</a></div>
+<div class="col-lg-3"><a href="../icon/reply-all.html"><i class="icon-reply-all"></i> icon-reply-all</a></div>
+<div class="col-lg-3"><a href="../icon/resize-horizontal.html"><i class="icon-resize-horizontal"></i> icon-resize-horizontal</a></div>
+<div class="col-lg-3"><a href="../icon/resize-vertical.html"><i class="icon-resize-vertical"></i> icon-resize-vertical</a></div>
+<div class="col-lg-3"><a href="../icon/retweet.html"><i class="icon-retweet"></i> icon-retweet</a></div>
+<div class="col-lg-3"><a href="../icon/road.html"><i class="icon-road"></i> icon-road</a></div>
+<div class="col-lg-3"><a href="../icon/rocket.html"><i class="icon-rocket"></i> icon-rocket</a></div>
+<div class="col-lg-3"><a href="../icon/rss.html"><i class="icon-rss"></i> icon-rss</a></div>
+<div class="col-lg-3"><a href="../icon/rss-sign.html"><i class="icon-rss-sign"></i> icon-rss-sign</a></div>
+<div class="col-lg-3"><a href="../icon/screenshot.html"><i class="icon-screenshot"></i> icon-screenshot</a></div>
+<div class="col-lg-3"><a href="../icon/search.html"><i class="icon-search"></i> icon-search</a></div>
+<div class="col-lg-3"><a href="../icon/share.html"><i class="icon-share"></i> icon-share</a></div>
+<div class="col-lg-3"><a href="../icon/share-alt.html"><i class="icon-share-alt"></i> icon-share-alt</a></div>
+<div class="col-lg-3"><a href="../icon/share-sign.html"><i class="icon-share-sign"></i> icon-share-sign</a></div>
+<div class="col-lg-3"><a href="../icon/shield.html"><i class="icon-shield"></i> icon-shield</a></div>
+<div class="col-lg-3"><a href="../icon/shopping-cart.html"><i class="icon-shopping-cart"></i> icon-shopping-cart</a></div>
+<div class="col-lg-3"><a href="../icon/sign-blank.html"><i class="icon-sign-blank"></i> icon-sign-blank</a></div>
+<div class="col-lg-3"><a href="../icon/signal.html"><i class="icon-signal"></i> icon-signal</a></div>
+<div class="col-lg-3"><a href="../icon/signin.html"><i class="icon-signin"></i> icon-signin</a></div>
+<div class="col-lg-3"><a href="../icon/signout.html"><i class="icon-signout"></i> icon-signout</a></div>
+<div class="col-lg-3"><a href="../icon/sitemap.html"><i class="icon-sitemap"></i> icon-sitemap</a></div>
+<div class="col-lg-3"><a href="../icon/smile.html"><i class="icon-smile"></i> icon-smile</a></div>
+<div class="col-lg-3"><a href="../icon/sort.html"><i class="icon-sort"></i> icon-sort</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-alphabet.html"><i class="icon-sort-by-alphabet"></i> icon-sort-by-alphabet</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-alphabet-alt.html"><i class="icon-sort-by-alphabet-alt"></i> icon-sort-by-alphabet-alt</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-attributes.html"><i class="icon-sort-by-attributes"></i> icon-sort-by-attributes</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-attributes-alt.html"><i class="icon-sort-by-attributes-alt"></i> icon-sort-by-attributes-alt</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-order.html"><i class="icon-sort-by-order"></i> icon-sort-by-order</a></div>
+<div class="col-lg-3"><a href="../icon/sort-by-order-alt.html"><i class="icon-sort-by-order-alt"></i> icon-sort-by-order-alt</a></div>
+<div class="col-lg-3"><a href="../icon/sort-down.html"><i class="icon-sort-down"></i> icon-sort-down</a></div>
+<div class="col-lg-3"><a href="../icon/sort-up.html"><i class="icon-sort-up"></i> icon-sort-up</a></div>
+<div class="col-lg-3"><a href="../icon/spinner.html"><i class="icon-spinner"></i> icon-spinner</a></div>
+<div class="col-lg-3"><a href="../icon/star.html"><i class="icon-star"></i> icon-star</a></div>
+<div class="col-lg-3"><a href="../icon/star-empty.html"><i class="icon-star-empty"></i> icon-star-empty</a></div>
+<div class="col-lg-3"><a href="../icon/star-half.html"><i class="icon-star-half"></i> icon-star-half</a></div>
+<div class="col-lg-3"><a href="../icon/star-half-empty.html"><i class="icon-star-half-empty"></i> icon-star-half-empty</a></div>
+<div class="col-lg-3"><a href="../icon/star-half-empty.html"><i class="icon-star-half-full"></i> icon-star-half-full <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/subscript.html"><i class="icon-subscript"></i> icon-subscript</a></div>
+<div class="col-lg-3"><a href="../icon/suitcase.html"><i class="icon-suitcase"></i> icon-suitcase</a></div>
+<div class="col-lg-3"><a href="../icon/sun.html"><i class="icon-sun"></i> icon-sun</a></div>
+<div class="col-lg-3"><a href="../icon/superscript.html"><i class="icon-superscript"></i> icon-superscript</a></div>
+<div class="col-lg-3"><a href="../icon/tablet.html"><i class="icon-tablet"></i> icon-tablet</a></div>
+<div class="col-lg-3"><a href="../icon/tag.html"><i class="icon-tag"></i> icon-tag</a></div>
+<div class="col-lg-3"><a href="../icon/tags.html"><i class="icon-tags"></i> icon-tags</a></div>
+<div class="col-lg-3"><a href="../icon/tasks.html"><i class="icon-tasks"></i> icon-tasks</a></div>
+<div class="col-lg-3"><a href="../icon/terminal.html"><i class="icon-terminal"></i> icon-terminal</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-down.html"><i class="icon-thumbs-down"></i> icon-thumbs-down</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-down-alt.html"><i class="icon-thumbs-down-alt"></i> icon-thumbs-down-alt</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-up.html"><i class="icon-thumbs-up"></i> icon-thumbs-up</a></div>
+<div class="col-lg-3"><a href="../icon/thumbs-up-alt.html"><i class="icon-thumbs-up-alt"></i> icon-thumbs-up-alt</a></div>
+<div class="col-lg-3"><a href="../icon/ticket.html"><i class="icon-ticket"></i> icon-ticket</a></div>
+<div class="col-lg-3"><a href="../icon/time.html"><i class="icon-time"></i> icon-time</a></div>
+<div class="col-lg-3"><a href="../icon/tint.html"><i class="icon-tint"></i> icon-tint</a></div>
+<div class="col-lg-3"><a href="../icon/trash.html"><i class="icon-trash"></i> icon-trash</a></div>
+<div class="col-lg-3"><a href="../icon/trophy.html"><i class="icon-trophy"></i> icon-trophy</a></div>
+<div class="col-lg-3"><a href="../icon/truck.html"><i class="icon-truck"></i> icon-truck</a></div>
+<div class="col-lg-3"><a href="../icon/umbrella.html"><i class="icon-umbrella"></i> icon-umbrella</a></div>
+<div class="col-lg-3"><a href="../icon/check-empty.html"><i class="icon-unchecked"></i> icon-unchecked <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/unlock.html"><i class="icon-unlock"></i> icon-unlock</a></div>
+<div class="col-lg-3"><a href="../icon/unlock-alt.html"><i class="icon-unlock-alt"></i> icon-unlock-alt</a></div>
+<div class="col-lg-3"><a href="../icon/upload.html"><i class="icon-upload"></i> icon-upload</a></div>
+<div class="col-lg-3"><a href="../icon/upload-alt.html"><i class="icon-upload-alt"></i> icon-upload-alt</a></div>
+<div class="col-lg-3"><a href="../icon/user.html"><i class="icon-user"></i> icon-user</a></div>
+<div class="col-lg-3"><a href="../icon/volume-down.html"><i class="icon-volume-down"></i> icon-volume-down</a></div>
+<div class="col-lg-3"><a href="../icon/volume-off.html"><i class="icon-volume-off"></i> icon-volume-off</a></div>
+<div class="col-lg-3"><a href="../icon/volume-up.html"><i class="icon-volume-up"></i> icon-volume-up</a></div>
+<div class="col-lg-3"><a href="../icon/warning-sign.html"><i class="icon-warning-sign"></i> icon-warning-sign</a></div>
+<div class="col-lg-3"><a href="../icon/wrench.html"><i class="icon-wrench"></i> icon-wrench</a></div>
+<div class="col-lg-3"><a href="../icon/zoom-in.html"><i class="icon-zoom-in"></i> icon-zoom-in</a></div>
+<div class="col-lg-3"><a href="../icon/zoom-out.html"><i class="icon-zoom-out"></i> icon-zoom-out</a></div>
+</div>
+</section>
+<section id="currency">
+<h4 class="page-header">Currency Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-btc"></i> icon-btc</a></div>
+<div class="col-lg-3"><a href="../icon/cny.html"><i class="icon-cny"></i> icon-cny</a></div>
+<div class="col-lg-3"><a href="../icon/usd.html"><i class="icon-dollar"></i> icon-dollar <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/eur.html"><i class="icon-eur"></i> icon-eur</a></div>
+<div class="col-lg-3"><a href="../icon/eur.html"><i class="icon-euro"></i> icon-euro <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/gbp.html"><i class="icon-gbp"></i> icon-gbp</a></div>
+<div class="col-lg-3"><a href="../icon/inr.html"><i class="icon-inr"></i> icon-inr</a></div>
+<div class="col-lg-3"><a href="../icon/jpy.html"><i class="icon-jpy"></i> icon-jpy</a></div>
+<div class="col-lg-3"><a href="../icon/krw.html"><i class="icon-krw"></i> icon-krw</a></div>
+<div class="col-lg-3"><a href="../icon/cny.html"><i class="icon-renminbi"></i> icon-renminbi <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/inr.html"><i class="icon-rupee"></i> icon-rupee <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/usd.html"><i class="icon-usd"></i> icon-usd</a></div>
+<div class="col-lg-3"><a href="../icon/krw.html"><i class="icon-won"></i> icon-won <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/jpy.html"><i class="icon-yen"></i> icon-yen <span class="muted">(alias)</span></a></div>
+</div>
+</section>
+<section id="text-editor">
+<h4 class="page-header">Text Editor Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/align-center.html"><i class="icon-align-center"></i> icon-align-center</a></div>
+<div class="col-lg-3"><a href="../icon/align-justify.html"><i class="icon-align-justify"></i> icon-align-justify</a></div>
+<div class="col-lg-3"><a href="../icon/align-left.html"><i class="icon-align-left"></i> icon-align-left</a></div>
+<div class="col-lg-3"><a href="../icon/align-right.html"><i class="icon-align-right"></i> icon-align-right</a></div>
+<div class="col-lg-3"><a href="../icon/bold.html"><i class="icon-bold"></i> icon-bold</a></div>
+<div class="col-lg-3"><a href="../icon/columns.html"><i class="icon-columns"></i> icon-columns</a></div>
+<div class="col-lg-3"><a href="../icon/copy.html"><i class="icon-copy"></i> icon-copy</a></div>
+<div class="col-lg-3"><a href="../icon/cut.html"><i class="icon-cut"></i> icon-cut</a></div>
+<div class="col-lg-3"><a href="../icon/eraser.html"><i class="icon-eraser"></i> icon-eraser</a></div>
+<div class="col-lg-3"><a href="../icon/file.html"><i class="icon-file"></i> icon-file</a></div>
+<div class="col-lg-3"><a href="../icon/file-alt.html"><i class="icon-file-alt"></i> icon-file-alt</a></div>
+<div class="col-lg-3"><a href="../icon/file-text.html"><i class="icon-file-text"></i> icon-file-text</a></div>
+<div class="col-lg-3"><a href="../icon/file-text-alt.html"><i class="icon-file-text-alt"></i> icon-file-text-alt</a></div>
+<div class="col-lg-3"><a href="../icon/font.html"><i class="icon-font"></i> icon-font</a></div>
+<div class="col-lg-3"><a href="../icon/indent-left.html"><i class="icon-indent-left"></i> icon-indent-left</a></div>
+<div class="col-lg-3"><a href="../icon/indent-right.html"><i class="icon-indent-right"></i> icon-indent-right</a></div>
+<div class="col-lg-3"><a href="../icon/italic.html"><i class="icon-italic"></i> icon-italic</a></div>
+<div class="col-lg-3"><a href="../icon/link.html"><i class="icon-link"></i> icon-link</a></div>
+<div class="col-lg-3"><a href="../icon/list.html"><i class="icon-list"></i> icon-list</a></div>
+<div class="col-lg-3"><a href="../icon/list-alt.html"><i class="icon-list-alt"></i> icon-list-alt</a></div>
+<div class="col-lg-3"><a href="../icon/list-ol.html"><i class="icon-list-ol"></i> icon-list-ol</a></div>
+<div class="col-lg-3"><a href="../icon/list-ul.html"><i class="icon-list-ul"></i> icon-list-ul</a></div>
+<div class="col-lg-3"><a href="../icon/paper-clip.html"><i class="icon-paper-clip"></i> icon-paper-clip</a></div>
+<div class="col-lg-3"><a href="../icon/paper-clip.html"><i class="icon-paperclip"></i> icon-paperclip <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/paste.html"><i class="icon-paste"></i> icon-paste</a></div>
+<div class="col-lg-3"><a href="../icon/repeat.html"><i class="icon-repeat"></i> icon-repeat</a></div>
+<div class="col-lg-3"><a href="../icon/undo.html"><i class="icon-rotate-left"></i> icon-rotate-left <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/repeat.html"><i class="icon-rotate-right"></i> icon-rotate-right <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/save.html"><i class="icon-save"></i> icon-save</a></div>
+<div class="col-lg-3"><a href="../icon/strikethrough.html"><i class="icon-strikethrough"></i> icon-strikethrough</a></div>
+<div class="col-lg-3"><a href="../icon/table.html"><i class="icon-table"></i> icon-table</a></div>
+<div class="col-lg-3"><a href="../icon/text-height.html"><i class="icon-text-height"></i> icon-text-height</a></div>
+<div class="col-lg-3"><a href="../icon/text-width.html"><i class="icon-text-width"></i> icon-text-width</a></div>
+<div class="col-lg-3"><a href="../icon/th.html"><i class="icon-th"></i> icon-th</a></div>
+<div class="col-lg-3"><a href="../icon/th-large.html"><i class="icon-th-large"></i> icon-th-large</a></div>
+<div class="col-lg-3"><a href="../icon/th-list.html"><i class="icon-th-list"></i> icon-th-list</a></div>
+<div class="col-lg-3"><a href="../icon/underline.html"><i class="icon-underline"></i> icon-underline</a></div>
+<div class="col-lg-3"><a href="../icon/undo.html"><i class="icon-undo"></i> icon-undo</a></div>
+<div class="col-lg-3"><a href="../icon/unlink.html"><i class="icon-unlink"></i> icon-unlink</a></div>
+</div>
+</section>
+<section id="directional">
+<h4 class="page-header">Directional Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/angle-down.html"><i class="icon-angle-down"></i> icon-angle-down</a></div>
+<div class="col-lg-3"><a href="../icon/angle-left.html"><i class="icon-angle-left"></i> icon-angle-left</a></div>
+<div class="col-lg-3"><a href="../icon/angle-right.html"><i class="icon-angle-right"></i> icon-angle-right</a></div>
+<div class="col-lg-3"><a href="../icon/angle-up.html"><i class="icon-angle-up"></i> icon-angle-up</a></div>
+ <div class="col-lg-3"><a href="../icon/arrow-down.html"><i class="icon-arrow-down"></i> icon-arrow-down</a></div>
+<div class="col-lg-3"><a href="../icon/arrow-left.html"><i class="icon-arrow-left"></i> icon-arrow-left</a></div>
+<div class="col-lg-3"><a href="../icon/arrow-right.html"><i class="icon-arrow-right"></i> icon-arrow-right</a></div>
+<div class="col-lg-3"><a href="../icon/arrow-up.html"><i class="icon-arrow-up"></i> icon-arrow-up</a></div>
+<div class="col-lg-3"><a href="../icon/caret-down.html"><i class="icon-caret-down"></i> icon-caret-down</a></div>
+<div class="col-lg-3"><a href="../icon/caret-left.html"><i class="icon-caret-left"></i> icon-caret-left</a></div>
+<div class="col-lg-3"><a href="../icon/caret-right.html"><i class="icon-caret-right"></i> icon-caret-right</a></div>
+<div class="col-lg-3"><a href="../icon/caret-up.html"><i class="icon-caret-up"></i> icon-caret-up</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-down.html"><i class="icon-chevron-down"></i> icon-chevron-down</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-left.html"><i class="icon-chevron-left"></i> icon-chevron-left</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-right.html"><i class="icon-chevron-right"></i> icon-chevron-right</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-sign-down.html"><i class="icon-chevron-sign-down"></i> icon-chevron-sign-down</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-sign-left.html"><i class="icon-chevron-sign-left"></i> icon-chevron-sign-left</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-sign-right.html"><i class="icon-chevron-sign-right"></i> icon-chevron-sign-right</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-sign-up.html"><i class="icon-chevron-sign-up"></i> icon-chevron-sign-up</a></div>
+<div class="col-lg-3"><a href="../icon/chevron-up.html"><i class="icon-chevron-up"></i> icon-chevron-up</a></div>
+<div class="col-lg-3"><a href="../icon/circle-arrow-down.html"><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</a></div>
+<div class="col-lg-3"><a href="../icon/circle-arrow-left.html"><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</a></div>
+<div class="col-lg-3"><a href="../icon/circle-arrow-right.html"><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</a></div>
+<div class="col-lg-3"><a href="../icon/circle-arrow-up.html"><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</a></div>
+<div class="col-lg-3"><a href="../icon/double-angle-down.html"><i class="icon-double-angle-down"></i> icon-double-angle-down</a></div>
+<div class="col-lg-3"><a href="../icon/double-angle-left.html"><i class="icon-double-angle-left"></i> icon-double-angle-left</a></div>
+<div class="col-lg-3"><a href="../icon/double-angle-right.html"><i class="icon-double-angle-right"></i> icon-double-angle-right</a></div>
+<div class="col-lg-3"><a href="../icon/double-angle-up.html"><i class="icon-double-angle-up"></i> icon-double-angle-up</a></div>
+<div class="col-lg-3"><a href="../icon/hand-down.html"><i class="icon-hand-down"></i> icon-hand-down</a></div>
+<div class="col-lg-3"><a href="../icon/hand-left.html"><i class="icon-hand-left"></i> icon-hand-left</a></div>
+ <div class="col-lg-3"><a href="../icon/hand-right.html"><i class="icon-hand-right"></i> icon-hand-right</a></div>
+<div class="col-lg-3"><a href="../icon/hand-up.html"><i class="icon-hand-up"></i> icon-hand-up</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-down.html"><i class="icon-long-arrow-down"></i> icon-long-arrow-down</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-left.html"><i class="icon-long-arrow-left"></i> icon-long-arrow-left</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-right.html"><i class="icon-long-arrow-right"></i> icon-long-arrow-right</a></div>
+<div class="col-lg-3"><a href="../icon/long-arrow-up.html"><i class="icon-long-arrow-up"></i> icon-long-arrow-up</a></div>
+</div>
+</section>
+<section id="video-player">
+<h4 class="page-header">Video Player Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/backward.html"><i class="icon-backward"></i> icon-backward</a></div>
+<div class="col-lg-3"><a href="../icon/eject.html"><i class="icon-eject"></i> icon-eject</a></div>
+<div class="col-lg-3"><a href="../icon/fast-backward.html"><i class="icon-fast-backward"></i> icon-fast-backward</a></div>
+<div class="col-lg-3"><a href="../icon/fast-forward.html"><i class="icon-fast-forward"></i> icon-fast-forward</a></div>
+<div class="col-lg-3"><a href="../icon/forward.html"><i class="icon-forward"></i> icon-forward</a></div>
+<div class="col-lg-3"><a href="../icon/fullscreen.html"><i class="icon-fullscreen"></i> icon-fullscreen</a></div>
+<div class="col-lg-3"><a href="../icon/pause.html"><i class="icon-pause"></i> icon-pause</a></div>
+<div class="col-lg-3"><a href="../icon/play.html"><i class="icon-play"></i> icon-play</a></div>
+<div class="col-lg-3"><a href="../icon/play-circle.html"><i class="icon-play-circle"></i> icon-play-circle</a></div>
+<div class="col-lg-3"><a href="../icon/play-sign.html"><i class="icon-play-sign"></i> icon-play-sign</a></div>
+<div class="col-lg-3"><a href="../icon/resize-full.html"><i class="icon-resize-full"></i> icon-resize-full</a></div>
+<div class="col-lg-3"><a href="../icon/resize-small.html"><i class="icon-resize-small"></i> icon-resize-small</a></div>
+<div class="col-lg-3"><a href="../icon/step-backward.html"><i class="icon-step-backward"></i> icon-step-backward</a></div>
+<div class="col-lg-3"><a href="../icon/step-forward.html"><i class="icon-step-forward"></i> icon-step-forward</a></div>
+<div class="col-lg-3"><a href="../icon/stop.html"><i class="icon-stop"></i> icon-stop</a></div>
+<div class="col-lg-3"><a href="../icon/youtube-play.html"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+</div>
+</section>
+<section id="brand">
+<h4 class="page-header">Brand Icons</h4>
+<div class="alert alert-info">
+<ul class="m-b-none">
+<li>All brand icons are trademarks of their respective owners.</li>
+<li>The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.</li>
+</ul>
+</div>
+<div class="row the-icons">
+
+<div class="col-lg-3"><a href="../icon/adn.html"><i class="icon-adn"></i> icon-adn</a></div>
+<div class="col-lg-3"><a href="../icon/android.html"><i class="icon-android"></i> icon-android</a></div>
+<div class="col-lg-3"><a href="../icon/apple.html"><i class="icon-apple"></i> icon-apple</a></div>
+<div class="col-lg-3"><a href="../icon/bitbucket.html"><i class="icon-bitbucket"></i> icon-bitbucket</a></div>
+<div class="col-lg-3"><a href="../icon/bitbucket-sign.html"><i class="icon-bitbucket-sign"></i> icon-bitbucket-sign</a></div>
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+<div class="col-lg-3"><a href="../icon/btc.html"><i class="icon-btc"></i> icon-btc</a></div>
+<div class="col-lg-3"><a href="../icon/css3.html"><i class="icon-css3"></i> icon-css3</a></div>
+<div class="col-lg-3"><a href="../icon/dribbble.html"><i class="icon-dribbble"></i> icon-dribbble</a></div>
+<div class="col-lg-3"><a href="../icon/dropbox.html"><i class="icon-dropbox"></i> icon-dropbox</a></div>
+<div class="col-lg-3"><a href="../icon/facebook.html"><i class="icon-facebook"></i> icon-facebook</a></div>
+<div class="col-lg-3"><a href="../icon/facebook-sign.html"><i class="icon-facebook-sign"></i> icon-facebook-sign</a></div>
+<div class="col-lg-3"><a href="../icon/flickr.html"><i class="icon-flickr"></i> icon-flickr</a></div>
+<div class="col-lg-3"><a href="../icon/foursquare.html"><i class="icon-foursquare"></i> icon-foursquare</a></div>
+<div class="col-lg-3"><a href="../icon/github.html"><i class="icon-github"></i> icon-github</a></div>
+<div class="col-lg-3"><a href="../icon/github-alt.html"><i class="icon-github-alt"></i> icon-github-alt</a></div>
+<div class="col-lg-3"><a href="../icon/github-sign.html"><i class="icon-github-sign"></i> icon-github-sign</a></div>
+<div class="col-lg-3"><a href="../icon/gittip.html"><i class="icon-gittip"></i> icon-gittip</a></div>
+<div class="col-lg-3"><a href="../icon/google-plus.html"><i class="icon-google-plus"></i> icon-google-plus</a></div>
+<div class="col-lg-3"><a href="../icon/google-plus-sign.html"><i class="icon-google-plus-sign"></i> icon-google-plus-sign</a></div>
+<div class="col-lg-3"><a href="../icon/html5.html"><i class="icon-html5"></i> icon-html5</a></div>
+<div class="col-lg-3"><a href="../icon/instagram.html"><i class="icon-instagram"></i> icon-instagram</a></div>
+<div class="col-lg-3"><a href="../icon/linkedin.html"><i class="icon-linkedin"></i> icon-linkedin</a></div>
+<div class="col-lg-3"><a href="../icon/linkedin-sign.html"><i class="icon-linkedin-sign"></i> icon-linkedin-sign</a></div>
+<div class="col-lg-3"><a href="../icon/linux.html"><i class="icon-linux"></i> icon-linux</a></div>
+<div class="col-lg-3"><a href="../icon/maxcdn.html"><i class="icon-maxcdn"></i> icon-maxcdn</a></div>
+<div class="col-lg-3"><a href="../icon/pinterest.html"><i class="icon-pinterest"></i> icon-pinterest</a></div>
+<div class="col-lg-3"><a href="../icon/pinterest-sign.html"><i class="icon-pinterest-sign"></i> icon-pinterest-sign</a></div>
+<div class="col-lg-3"><a href="../icon/renren.html"><i class="icon-renren"></i> icon-renren</a></div>
+<div class="col-lg-3"><a href="../icon/skype.html"><i class="icon-skype"></i> icon-skype</a></div>
+<div class="col-lg-3"><a href="../icon/stackexchange.html"><i class="icon-stackexchange"></i> icon-stackexchange</a></div>
+<div class="col-lg-3"><a href="../icon/trello.html"><i class="icon-trello"></i> icon-trello</a></div>
+<div class="col-lg-3"><a href="../icon/tumblr.html"><i class="icon-tumblr"></i> icon-tumblr</a></div>
+<div class="col-lg-3"><a href="../icon/tumblr-sign.html"><i class="icon-tumblr-sign"></i> icon-tumblr-sign</a></div>
+<div class="col-lg-3"><a href="../icon/twitter.html"><i class="icon-twitter"></i> icon-twitter</a></div>
+<div class="col-lg-3"><a href="../icon/twitter-sign.html"><i class="icon-twitter-sign"></i> icon-twitter-sign</a></div>
+<div class="col-lg-3"><a href="../icon/vk.html"><i class="icon-vk"></i> icon-vk</a></div>
+<div class="col-lg-3"><a href="../icon/weibo.html"><i class="icon-weibo"></i> icon-weibo</a></div>
+<div class="col-lg-3"><a href="../icon/windows.html"><i class="icon-windows"></i> icon-windows</a></div>
+<div class="col-lg-3"><a href="../icon/xing.html"><i class="icon-xing"></i> icon-xing</a></div>
+<div class="col-lg-3"><a href="../icon/xing-sign.html"><i class="icon-xing-sign"></i> icon-xing-sign</a></div>
+<div class="col-lg-3"><a href="../icon/youtube.html"><i class="icon-youtube"></i> icon-youtube</a></div>
+<div class="col-lg-3"><a href="../icon/youtube-play.html"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+<div class="col-lg-3"><a href="../icon/youtube-sign.html"><i class="icon-youtube-sign"></i> icon-youtube-sign</a></div>
+</div>
+</section>
+<section id="medical">
+<h4 class="page-header">Medical Icons</h4>
+<div class="row the-icons">
+<div class="col-lg-3"><a href="../icon/ambulance.html"><i class="icon-ambulance"></i> icon-ambulance</a></div>
+<div class="col-lg-3"><a href="../icon/h-sign.html"><i class="icon-h-sign"></i> icon-h-sign</a></div>
+<div class="col-lg-3"><a href="../icon/hospital.html"><i class="icon-hospital"></i> icon-hospital</a></div>
+<div class="col-lg-3"><a href="../icon/medkit.html"><i class="icon-medkit"></i> icon-medkit</a></div>
+<div class="col-lg-3"><a href="../icon/plus-sign-alt.html"><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</a></div>
+<div class="col-lg-3"><a href="../icon/stethoscope.html"><i class="icon-stethoscope"></i> icon-stethoscope</a></div>
+<div class="col-lg-3"><a href="../icon/user-md.html"><i class="icon-user-md"></i> icon-user-md</a></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+<footer id="footer">
+<div class="text-center padder clearfix">
+<p>
+<small>&copy; first 2013, Mobile first web app framework base on Bootstrap</small><br><br>
+<a href="" class="btn btn-mini btn-circle btn-twitter"><i class="icon-twitter"></i></a>
+<a href="" class="btn btn-mini btn-circle btn-facebook"><i class="icon-facebook"></i></a>
+<a href="" class="btn btn-mini btn-circle btn-gplus"><i class="icon-google-plus"></i></a>
+ </p>
+</div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

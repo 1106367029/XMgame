@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>XM游戏资讯平台-攻略</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.4.css">
+	<!-- IonIcons -->
+	<link rel="stylesheet" href="css/forum-stategy/ionicons.min.css">
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/forum-stategy/style.css">
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+	<!--导航栏css-->
+	<link rel="stylesheet" href="css/head.css" />
+	<style>
+		body{
+			background-image: url("img/game/strabg2.jpg");
+		}
+		@media (max-width: 1000px) {
+			body{
+				background-image: url("img/game/strabg2-1.jpg");
+			}
+		}
+		@media (max-width: 600px) {
+			body{
+				background-image: url("img/game/strabg2-2.jpg");
+			}
+		}
+	</style>
+</head>
+
+<body>
+<!-- 导航 -->
+<header class="header">
+	<div class="clearfix">
+		<div class="fl left">
+			<a href="javascript:void(0)" ><img src="img/forum/logo.png" alt="" class="img1" /></a>
+			<a href="javascript:void(0)" ><img src="img/forum/logo.png" alt="" class="img2" /></a>
+		</div>
+		<div class="fr nav">
+			<ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+				<li><a href="index.html">官网首页</a></li>
+				<li><a href="new.html">新闻资讯</a></li>
+				<li><a href="strategy.html" style="color: orangered;">游戏攻略</a></li>
+				<li><a href="forum.html">游戏论坛</a></li>
+				<li><a href="personal_center.html">个人中心</a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0)" id="navToggle">
+			<span></span>
+		</a>
+	</div>
+</header>
+<!--移动端的导航-->
+<div class="m_nav">
+	<div class="top clearfix">
+		<img src="img/forum/closed.png" alt="" class="closed" />
+	</div>
+	<div class="logo">
+		<img src="img/forum/logo.png" alt="" />
+	</div>
+	<ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+		<li><a href="index.html">官网首页</a></li>
+		<li><a href="new.html">新闻资讯</a></li>
+		<li><a href="strategy.html" style="color: orangered;">游戏攻略</a></li>
+		<li><a href="forum.html">游戏论坛</a></li>
+		<li><a href="personal_center.html">个人中心</a></li>
+	</ul>
+</div>
+
+<section class="search" id="strategy">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<aside>
+					<h2 class="aside-title">分类搜索</h2>
+					<div class="aside-body">
+						<p>选择搜索的关键词</p>
+						<form id="text">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" name="q" class="form-control" placeholder="Type something ..."
+									       value="hello">
+									<div class="input-group-btn">
+										<button class="btn btn-primary" type="button" @click="search">
+											<i class="ion-search"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</aside>
+				<aside>
+					<h2 class="aside-title">Filter</h2>
+					<div class="aside-body">
+						<form class="checkbox-group" id="time">
+							<div class="group-title">发布日期</div>
+							<div class="form-group">
+								<label><input type="radio" name="date" checked value="anytime"> Anytime</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date" value="yesterday"> 昨天</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date" value="lastweek"> 上星期</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="date" value="lastmonth"> 上个月</label>
+							</div>
+							<br>
+							<div class="group-title">类型</div>
+							<div class="form-group">
+								<label><input type="radio" name="category" value="1" checked> 端游</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="category" value="2"> 手游</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="category" value="3"> 现实</label>
+							</div>
+							<div class="form-group">
+								<label><input type="radio" name="category" value="4"> 亲子</label>
+							</div>
+						</form>
+					</div>
+				</aside>
+			</div>
+			<div class="col-md-9">
+				<div class="nav-tabs-group">
+					<ul class="nav-tabs-list">
+						<li :class="allclass"><a href="javascript:" @click="all()">All</a></li>
+						<li :class="dyclass"><a href="javascript:" @click="dy">端游</a></li>
+						<li :class="syclass"><a href="javascript:" @click="sy">手游</a></li>
+						<li :class="xsclass"><a href="javascript:" @click="xs">现实</a></li>
+						<li :class="qzclass"><a href="javascript:" @click="qz">亲子</a></li>
+					</ul>
+					<div class="nav-tabs-right">
+						<img src="img/new/x.jpg" width="100%">
+					</div>
+
+				</div>
+				<div class="search-result">
+				</div>
+
+				<div class="row" id="stralist">
+					<article class="col-md-12 article-list" v-for="strategy of arr">
+						<div class="inner">
+							<figure>
+								<a href="single.html">
+									<img :src="strategy.picture" width="100%" height="100%">
+								</a>
+							</figure>
+							<div class="details">
+								<div class="detail">
+									<div class="category">
+										<a href="#">{{strategy.uname}}&nbsp; &nbsp;</a>
+									</div>
+									<time>{{strategy.time}}</time>
+								</div>
+								<h1><a href="single.html">{{strategy.stra_title}}</a></h1>
+								<p style="height:80px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;">
+									{{strategy.content1}}
+								</p>
+								<footer>
+									<!--往a的class里加action,把i的class换成ion-android-favorite-->
+									<a href="javascript:" class="love" @click="love($event)">
+										<i class="ion-android-favorite-outline"></i>
+										<div>{{strategy.love}}</div>
+										<div style="display: none">{{strategy.stra_id}}</div>
+									</a>
+									<a class="btn btn-primary more" href="javascript:" @click="detail(strategy.stra_id)">
+										<div>详细</div>
+										<div><i class="ion-ios-arrow-thin-right"></i></div>
+									</a>
+								</footer>
+							</div>
+						</div>
+					</article>
+					<div class="col-md-12 text-center" id="page">
+						<ul class="pagination">
+							<li class="prev" @click="prevpage"><a href="javascript:"><i class="ion-ios-arrow-left"></i></a></li>
+							<li @click="firstpage"><a href="javascript:">首页</a></li>
+							<li  class="active"><a href="javascript:">1</a></li>
+							<li><a href="javascript:" style="background-color: white">/</a></li>
+							<li><a href="javascript:">97</a></li>
+							<li @click="lastpage"><a href="javascript:">尾页</a></li>
+							<li class="next" @click="nextpage"><a href="javascript:"><i class="ion-ios-arrow-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer >
+	<div class="text-center padder clearfix">
+		<p>
+		<p>Copyright&copy;2019 软工161莫慧兰</p><br><br>
+		</p>
+	</div>
+</footer>
+<!-- JS -->
+
+<script src="js/forum-stategy/strategy.js"></script>
+<script src="js/navbar.js"></script>
+</body>
+</html>

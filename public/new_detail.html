@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>XM游戏资讯平台-新闻-detail</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.4.css">
+	<!-- IonIcons -->
+	<link rel="stylesheet" href="css/forum-stategy/ionicons.min.css">
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/forum-stategy/style.css">
+
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+	<!--导航栏css-->
+	<link rel="stylesheet" href="css/head.css"/>
+</head>
+
+<body>
+<!-- 导航 -->
+<header class="header">
+	<div class="clearfix">
+		<div class="fl left">
+			<a href="javascript:void(0)"><img src="img/forum/logo.png" alt="" class="img1"/></a>
+			<a href="javascript:void(0)"><img src="img/forum/logo.png" alt="" class="img2"/></a>
+		</div>
+		<div class="fr nav">
+			<ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+				<li><a href="index.html">官网首页</a></li>
+				<li><a href="new.html" style="color: orangered;">新闻资讯</a></li>
+				<li><a href="strategy.html">游戏攻略</a></li>
+				<li><a href="forum.html">游戏论坛</a></li>
+				<li><a href="personal_center.html">个人中心</a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0)" id="navToggle">
+			<span></span>
+		</a>
+	</div>
+</header>
+<!--移动端的导航-->
+<div class="m_nav">
+	<div class="top clearfix">
+		<img src="img/forum/closed.png" alt="" class="closed"/>
+	</div>
+	<div class="logo">
+		<img src="img/forum/logo.png" alt=""/>
+	</div>
+	<ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+		<li><a href="index.html">官网首页</a></li>
+		<li class="active"><a href="new.html" style="color: orangered;">新闻资讯</a></li>
+		<li><a href="strategy.html">游戏攻略</a></li>
+		<li><a href="forum.html">游戏论坛</a></li>
+		<li><a href="personal_center.html">个人中心</a></li>
+	</ul>
+</div>
+
+<section class="page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<ol class="breadcrumb">
+					<li>首页</li>
+					<li>新闻</li>
+					<li class="active">{{title}}</li>
+				</ol>
+				<hr>
+				<h1 class="page-title">{{title}}</h1>
+				<p class="page-subtitle">{{time}}</p>
+				<div class="line thin"></div>
+				<div class="page-description">
+					<p style="text-indent: 30px">{{content}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Start footer -->
+<footer >
+	<div class="text-center padder clearfix">
+		<p>
+		<p>Copyright&copy;2019 软工161莫慧兰</p><br><br>
+		</p>
+	</div>
+</footer>
+<!-- End Footer -->
+
+<!-- JS -->
+<script src="js/navbar.js"></script>
+<script src="js/news/new_detail.js"></script>
+</body>
+</html>

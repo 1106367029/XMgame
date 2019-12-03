@@ -1,0 +1,63 @@
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #191E21;
+	font-size: 1.4em;
+	background-image: url("../../img/game/strabg1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 600px;
+	background-color: #faebcc;
+}
+/* White */
+.white {
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-bottom: 0px;
+	margin-top: 300px;
+}
+
+/* TABLE */
+.params-table code {
+	color: #4e4e4e;
+	border-radius: 1px;
+	background-color: rgba(116, 207, 174, .3);
+	-webkit-transition: background-color 0.1s ease-in-out;
+    -moz-transition: background-color 0.1s ease-in-out;
+    -ms-transition: background-color 0.1s ease-in-out;
+    -o-transition:background-colorl 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.params-table code:hover {
+	background-color: rgba(116, 207, 174, .5);
+}
+
+
+.params-table thead {
+	color: #fff;
+	background-color: #74cfae;
+}
+
+.params-table  thead > tr > th {
+	border-bottom: none;
+	font-size: 1.2em;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.params-table tbody > tr > td {
+	border-top: none;
+}
+
+.params-table > tbody > tr:hover > td {
+	background-color: #e4f6ef;
+}
+h1{
+	font-weight: bold;
+	font-size: 40px;
+	margin-left: 5%;
+	margin-bottom: 20px;
+
+}

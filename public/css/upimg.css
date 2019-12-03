@@ -1,0 +1,185 @@
+.image-view{
+    width:350px;
+    height:300px;
+    margin:30px auto;
+}
+.image-view .addbox{
+    float:left;
+    position:relative;
+    height:100px;
+    width:100px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.image-view .addbox input{
+    position:absolute;
+    left:0;
+    height:100px;
+    width:100px;
+    opacity:0;
+}
+.image-view .addbox .addbtn{
+    float:left;
+    height:100px;
+    width:100px;
+    line-height:100px;
+    color:#fff;
+    font-size:20px;
+    background:#ccc;
+    border-radius:10px;
+}
+.image-view .item {
+    position:relative;
+    float:left;
+    height:80px;
+    width:80px;
+    margin:5px 5px 0 0;
+}
+.image-view .item .cancel-btn{
+    position:absolute;
+    right:0;
+    top:0;
+    display:block;
+    width:20px;
+    height:20px;
+    color:#fff;
+    line-height:20px;
+    text-align:center;
+    background:red;
+    border-radius:10px;
+    cursor:pointer;
+}
+.image-view .item img{
+    width:100%;
+    height:100%;
+}
+.image-view .view{
+    clear:both;
+}
+.upgl{
+    margin: 60px 0 0 10px;
+    width: 70px;
+    height: 40px;
+    border-radius: 10%;
+    background-color: #00c7f7;
+    color: white;
+}
+
+/*个人中心上传头像*/
+.grzx-sctx{
+    width:350px;
+    height:300px;
+
+}
+.grzx-sctx .addbox{
+    float:left;
+    position:relative;
+    height:100px;
+    width:100px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.grzx-sctx .addbox input{
+    position:absolute;
+    left:0;
+    height:100px;
+    width:100px;
+    opacity:0;
+}
+.grzx-sctx .addbox .addbtn{
+    float:left;
+    height:100px;
+    width:100px;
+    line-height:100px;
+    color:#fff;
+    font-size:20px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius:50px;
+}
+/*后台新闻图片上传*/
+.image-new{
+    width:550px;
+    height:250px;
+    /*margin:30px auto;*/
+    margin: 10px 0  0 10px;
+}
+.image-new .addbox{
+    float:left;
+    position:relative;
+    height:100px;
+    width:100px;
+    margin-bottom:20px;
+    text-align:center;
+}
+.image-new .addbox input{
+    position:absolute;
+    left:0;
+    height:100px;
+    width:100px;
+    opacity:0;
+}
+.image-new .addbox .addbtn{
+    float:left;
+    height:100px;
+    width:100px;
+    line-height:100px;
+    color:#fff;
+    font-size:20px;
+    background:#ccc;
+    border-radius:10px;
+}
+.image-new .item {
+    position:relative;
+    float:left;
+    height:100px;
+    width:100px;
+    margin:5px 5px 0 0;
+}
+.image-new .item .cancel-btn{
+    position:absolute;
+    right:0;
+    top:0;
+    display:block;
+    width:20px;
+    height:20px;
+    color:#fff;
+    line-height:20px;
+    text-align:center;
+    background:red;
+    border-radius:10px;
+    cursor:pointer;
+}
+.image-new .item img{
+    width:100%;
+    height:100%;
+}
+.image-new .view{
+    clear:both;
+}
+/*后台游戏图片上传*/
+.image-game{
+    width:100px;
+    height:100px;
+}
+.image-game .addbox{
+    float:left;
+    position:relative;
+    height:100px;
+    width:100px;
+    text-align:center;
+}
+.image-game .addbox input{
+    position:absolute;
+    left:0;
+    height:100px;
+    width:100px;
+    opacity:0;
+}
+.image-game .addbox .addbtn{
+    float:left;
+    height:100px;
+    width:100px;
+    background:#ccc;
+    border-radius:50%;
+}
